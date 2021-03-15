@@ -5,7 +5,6 @@ const name = 'Andy';
 
 {
   // if / else
-
   if (name === 'Andy') {
     console.log('if / else: ', 'User name is: ' + name);
   } else {
@@ -15,7 +14,6 @@ const name = 'Andy';
 
 {
   // if / else if / else
-
   if (name === 'Andy') {
     console.log('if / else if / else: ', 'User name is: ' + name);
   } else if (name === 'Peter') {
@@ -27,7 +25,6 @@ const name = 'Andy';
 
 {
   // switch
-
   switch (name) {
     case 'Peter':
       console.log('switch: ', 'User name is: ' + name);
@@ -45,7 +42,6 @@ const name = 'Andy';
 
 {
   // ternary operator
-
   (name === 'Alex')
     ? console.log('ternary: ', 'User name is: ' + name)
     : console.log('ternary: ', 'User have another name');
