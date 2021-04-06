@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.parent {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  max-width: 960px;
+  background-color: rgba(60, 60,60, 0.1);
+}
+
+.child {
+  /* full width = border + padding + width */
+  width: 400px;
+  height: 200px;
+  padding: 25px;
+  border: 25px solid #E8C48F;
+  overflow: auto;
+}
+
+.box {
+  margin: auto;
+  width: 200px;
+  height: 70px;
+  padding: 20px;
+  border: 10px solid grey;
+}
+
+.box-fixed {
+  background-color: yellow;
+  position: fixed;
+  right: 10%;
+  bottom: 5%;
+}

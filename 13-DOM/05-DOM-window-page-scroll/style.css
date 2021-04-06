@@ -1,0 +1,18 @@
+.btn-to-top {
+  position: fixed;
+  bottom: 3%;
+  right: 10%;
+}
+
+.btn-scroll-to {
+  position: fixed;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.btn-scroll-by {
+  position: fixed;
+  bottom: 3%;
+  left: 10%;
+}
