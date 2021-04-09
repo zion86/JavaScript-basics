@@ -1,6 +1,7 @@
-{
-	// Array constructor
-	// .fill(value, start, end(not included)) заповнює всі елементи масиву статичним значенням (мутує)
+'use strict';
+
+{ // Array constructor
+	// .fill(value, start, end(not included)) fill Array with static values
 	const constructorArray = new Array(4).fill('A', 1, 3); // [ empty, 'A', 'A', empty ]
 	
 	// Create Array literal
@@ -14,8 +15,7 @@
 }
 
 
-{
-	// copy Array or reference Array
+{ // copy Array or reference Array
 	const lang = ['ua', 'ru', 'en', 'gr'];
 	console.log('lang: ', lang);										// lang:  [ 'ua', 'ru', 'en', 'gr' ]
 

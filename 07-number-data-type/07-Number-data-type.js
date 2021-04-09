@@ -60,23 +60,22 @@
 { // convert Numbet to String
 
   let num = 7;
-  const numToString = num.toString();
-  console.log('numToString: ', numToString);  // '7'
+  const numToString = num.toString();					// '7'
+  console.log('numToString: ', numToString);
 
   const floatNum = 9.656;
 
-  const floatNum0 = floatNum.toFixed(0);
-  console.log('floatNum0: ', floatNum0);      // '10'
+  const floatNum0 = floatNum.toFixed(0);			// '10'
+  console.log('floatNum0: ', floatNum0);
 
-  const floatNum1 = floatNum.toFixed(1);
-  console.log('floatNum1: ', floatNum1);      // '9.7'
+  const floatNum1 = floatNum.toFixed(1);			// '9.7'
+  console.log('floatNum1: ', floatNum1);
 
-  const floatNum2 = floatNum.toFixed(2);
-  console.log('floatNum2: ', floatNum2);      // '9.66'
+  const floatNum2 = floatNum.toFixed(2);			// '9.66'
+  console.log('floatNum2: ', floatNum2);
 
-
-  const numToLocal = num.toLocaleString();
-  console.log('numToLocal: ', numToLocal);    // '7'
+  const numToLocal = num.toLocaleString();		// '7'
+  console.log('numToLocal: ', numToLocal);
 
   const numToLocalExtend = num.toLocaleString('uk-UK', { style: 'currency', currency: 'UAH' });
   console.log('numToLocalExtend: ', numToLocalExtend); // '7,00 ₴'
