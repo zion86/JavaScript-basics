@@ -17,7 +17,7 @@
 
 	// convert values to Boolean (true, false) data type
 	console.log('!hello', !'hello'); 									// convert to Boolean false
-	console.log('!!hello', !!'hello'); 								// convert to Boolean true
+	console.log('!!hello', !!'hello'); 								// convert to Boolean true, because 'hello' is not empty
 }
 
 { // == === != !==

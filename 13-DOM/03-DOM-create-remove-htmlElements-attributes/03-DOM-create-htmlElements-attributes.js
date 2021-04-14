@@ -22,6 +22,7 @@
   }
 }
 
+
 { // v2
   // create new HTML element in page
   const ol = document.createElement('ol');
@@ -75,6 +76,7 @@
   ol.dataset.orderState = 'pendind'; // return 'pending'
 }
 
+
 { // v3
   // insert HTML-layout inside HTML
   htmlElement.insertAdjacentHTML('beforeBegin', '<p>!</p>');		// outside current element at the top
@@ -95,3 +97,8 @@
   htmlElement.insertAdjacentText('afterBegin', 'text string');	// inside current element at the top
   htmlElement.insertAdjacentText('beforeEnd', 'text string');		// inside current element at the bottom
 }
+
+// innerHTML rewrite code (clear or add code)
+
+// elem.textContent = '';
+// elem.insertAdjacentHTML add code

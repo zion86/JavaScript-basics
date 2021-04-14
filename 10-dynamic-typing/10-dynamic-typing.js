@@ -1,6 +1,7 @@
 'use strict';
 
 { // String()
+
   // explicitly developer
   console.log('String(null)', String(null));                    // 'null'
   console.log('String(4)', String(4));                          // '4'
