@@ -22,6 +22,7 @@
   // <input type="text" name="input-name">
 }
 
+
 { // new approach
 
   // find HTML element in Page by ID
@@ -32,20 +33,11 @@
 
   // return NodeList collection, include .forEach() method
   const findAllClassElems = document.querySelectorAll('.list__item');
+}
 
 
-  // HEMLElem.matches('.css-class-name') method
-  // check if HTML element include necessary css class
-  // return Boolean true or false
-  findAllClassElems.forEach(elem => {
-    if (elem.matches('.list__item--active')) {
-      console.log(elem.textContent, 'include necessary css class');
-    } else {
-      console.log(elem.textContent, 'not include necessary css class');
-    }
-  });
-
-  //HTMLElem.closest('css-class-name') (go up in DOM tree) method
+{
+	//HTMLElem.closest('css-class-name') (go up in DOM tree) method
   // check if current or parent HTML element include necessary css class
   // return parentElem or null
   const liItemInUl = document
@@ -60,4 +52,15 @@
     .querySelector('.list')
     .contains(findByClassName);
   console.log('ulHaveLi: ', ulHaveLi);
+
+  // HEMLElem.matches('.css-class-name') method
+  // check if HTML element include necessary css class
+  // return Boolean true or false
+  findAllClassElems.forEach(elem => {
+    if (elem.matches('.list__item--active')) {
+      console.log(elem.textContent, 'include necessary css class');
+    } else {
+      console.log(elem.textContent, 'not include necessary css class');
+    }
+  });
 }

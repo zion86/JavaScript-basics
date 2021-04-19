@@ -1,21 +1,18 @@
 'use strict';
 
-const htmlElem = document.documentElement;  // get HTML element
-const headElem = document.head;             // get HEAD element
-const bodyElem = document.body;             // get BODY element
-const li = document.querySelector('.list__item--active');
-
 // nodeType 1 = Element
 // nodeType 3 = Text
 
+const htmlElem = document.documentElement;  // get <html> element
+const headElem = document.head;             // get <head> element
+const bodyElem = document.body;             // get <body> element
 
-// read parent htmlElement
-console.log(li.offsetParent.tagName);
+const li = document.querySelector('.list__item--active');
 
 
-{ // ELEMENT
+{ // ELEMENT nodeType
 
-  const bodyElemChilds = bodyElem.children;
+  const bodyElemChildren = bodyElem.children;
   // return HTMLCollection(4) [h1#title, ul.list.page__list, footer, script, title: h1#title]
 
   const bodyFirstChildElem = bodyElem.firstElementChild;
@@ -32,10 +29,12 @@ console.log(li.offsetParent.tagName);
 
   const liParentElem = li.parentElement;
   // return parent Element <ul class="list page__list">...</ul>
+
+  console.log(li.offsetParent.tagName);       // read <tag> in parent element
 }
 
 
-{ // NODE
+{ // NODE nodeType
 
   const bodyChields = bodyElem.childNodes;
   // return all child NodeList inside parent element

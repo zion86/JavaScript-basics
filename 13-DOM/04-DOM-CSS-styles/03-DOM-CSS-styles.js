@@ -19,6 +19,7 @@
   boxStyles.width; // width: 200px
 }
 
+
 {
 	const secondBox = document.querySelector('.second-box');
 
