@@ -25,35 +25,47 @@
 
 { // v2
   // create new HTML element in page
-  const ol = document.createElement('ol');
+  const ol = document.querySelector('ol');
 
-  // insert HTML elemend in to the end of body tag
-  document.body.append(ol);
-
-  // add to the start of the list
-  const firstLi = document.createElement('li');
-  firstLi.textContent = 'first LI element';
-  ol.prepend(firstLi);
-
-  const li = document.createElement('li');
-  ol.append(li);
+  // add to the begin of the list
+  const firstLiElem = document.createElement('li');
+  firstLiElem.textContent = 'first <li> element';
+  ol.prepend(firstLiElem);
 
   // add to the end of the list
-  const lastLi = document.createElement('li');
-  lastLi.textContent = 'Last LI element';
-  ol.append(lastLi);
+  const lastLiElem = document.createElement('li');
+  lastLiElem.textContent = 'last <li> element';
+  ol.append(lastLiElem);
 
-  // add Node before ol tag
-  ol.before(document.createElement('p').textContent = 'add text before ol tag');
+  // add Element before ol tag
+  const pBeforeOl = document.createElement('p');
+  pBeforeOl.textContent = 'add <p> before <ol>';
+  ol.before(pBeforeOl);
 
-  // add Node after ol tag
-  ol.after(document.createElement('p').textContent = 'add text after ol tag');
+  // add Element after ol tag
+  const pAfterOl = document.createElement('p');
+  pAfterOl.textContent = 'add <p> after <ol>';
+  ol.after(pAfterOl);
 
-  // delete Node element
-  // li.remove();
+  // delete Element element
+  firstLiElem.remove();
+  lastLiElem.remove();
+}
 
-  // replace old HTML Node to new HTML Node
-  const p = document.createElement('p');
-  p.textContent = 'replace li to p';
-  li.replaceWith(p);
+
+{
+  // move <nav> to another place
+  const nav = document.querySelector('nav');
+  const ol = document.querySelector('ol');
+
+  ol.before(nav);
+
+
+  // replace old HTML Element to new the HTML Element
+  const activeLink = nav.querySelector('.active');
+  const a = document.createElement('a');
+
+  a.href = '#!';
+  a.textContent = 'New address';
+  activeLink.replaceWith(a);
 }

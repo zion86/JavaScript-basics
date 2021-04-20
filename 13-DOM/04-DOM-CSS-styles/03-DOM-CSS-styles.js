@@ -41,9 +41,9 @@
 	// delete one CSS class from elem
 	secondBox.classList.remove('alert', 'article');
 
-	// check if CSS class exist css-name inside class and return bullean value (true of false)
-	secondBox.classList.contains('news');
-
 	// toggle CSS class in element
 	secondBox.classList.toggle('for-all');
+	
+	// check if CSS class exist css-name inside class and return bullean value (true of false)
+	secondBox.classList.contains('news');
 }

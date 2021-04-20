@@ -36,7 +36,10 @@
 }
 
 
-{
+{ // elem.closest('.css-class-name')
+	// elem.contains('.css-class-name')
+	// elem.matches('.css-class-name')
+	
 	//HTMLElem.closest('css-class-name') (go up in DOM tree) method
   // check if current or parent HTML element include necessary css class
   // return parentElem or null

@@ -1,21 +1,37 @@
 'use strict';
 
-{ // insert HTML-layout inside HTML
-  htmlElement.insertAdjacentHTML('beforeBegin', '<p>!</p>');		// outside current element at the top
-  htmlElement.insertAdjacentHTML('afterEnd', '<p>!</p>');				// outside current element at the bottom
-  htmlElement.insertAdjacentHTML('afterBegin', '<p>!</p>');			// inside current element at the top
-  htmlElement.insertAdjacentHTML('beforeEnd', '<p>!</p>');			// inside current element at the botom
+const ulElem = document.querySelector('ul');
 
-  // insert HTML tag inside HTML
-  const p = document.createElement('p');
-  htmlElement.insertAdjacentElement('beforeBegin', p);					// outside current element at the top
-  htmlElement.insertAdjacentElement('afterEnd', p);							// outside current element at the bottom
-  htmlElement.insertAdjacentElement('afterBegin', p);						// inside current element at the top
-  htmlElement.insertAdjacentElement('beforeEnd', p);						// inside current element at the bottom
 
-  // insert text string inside HTML
-  htmlElement.insertAdjacentText('beforeBegin', 'text string');	// outside current element at the top
-  htmlElement.insertAdjacentText('afterEnd', 'text string');		// outside current element at the bottom
-  htmlElement.insertAdjacentText('afterBegin', 'text string');	// inside current element at the top
-  htmlElement.insertAdjacentText('beforeEnd', 'text string');		// inside current element at the bottom
-}
+// outside current element at the top
+ulElem.insertAdjacentHTML('beforebegin', '<p>before begin ul element</p>');
+// outside current element at the bottom
+ulElem.insertAdjacentHTML('afterend', '<p>after begin ul element</p>');
+
+
+// inside current element at the top
+ulElem.insertAdjacentHTML('afterbegin', '<li>first li inside ul element</li>');
+// inside current element at the bottom
+ulElem.insertAdjacentHTML('beforeend', '<li>last li inside ul element</li>');
+
+
+// insert HTML tag inside HTML
+const li = document.createElement('li');
+li.textContent = 'li element'
+ulElem.insertAdjacentElement('beforebegin', li);  // outside current element at the top
+ulElem.insertAdjacentElement('afterend', li);     // outside current element at the bottom
+ulElem.insertAdjacentElement('afterbegin', li);   // inside current element at the top
+ulElem.insertAdjacentElement('beforeend', li);    // inside current element at the bottom
+
+
+// insert text string inside HTML
+
+// outside current element at the top
+ulElem.insertAdjacentText('beforebegin', '<p>text content outside</p>');
+// outside current element at the bottom
+ulElem.insertAdjacentText('afterend', '<p>text content outside</p>');
+
+// inside current element at the top
+ulElem.insertAdjacentText('afterbegin', '<li>text content inside</li>');
+// inside current element at the bottom
+ulElem.insertAdjacentText('beforeend', '<li>text content inside</li>');
