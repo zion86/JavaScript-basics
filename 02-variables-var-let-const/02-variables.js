@@ -1,6 +1,7 @@
 'use strict';
 
 // variables types:
+// var always has global scope, var only inside functions has local scope.
 // GLOBAL (scope) variables: var, function fName() {} (have hoisting)
 // LOCAL (scope) variables: let, const, const localFn = () => {};
 
