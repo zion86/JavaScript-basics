@@ -3,7 +3,7 @@
 // яке відповідає умові, якщо не знайдено - то повертає undefined
 // --------------------------------------------------------------
 const cars = ['opel', 'audi', 'citroen', 'audi', 'mercedes-benz'];
-const findCar = cars.find((car, i) => car === 'audi' ? car : null );
+const findCar = cars.find((car, i) => car === 'audi' ? car : null);
 // console.log(findCar); // audi 1 audi 3
 
 const numbers = [3, 5, 1, 0, 4, 3];

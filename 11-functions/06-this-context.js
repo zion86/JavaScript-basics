@@ -75,9 +75,9 @@
   // add arguments from function
   sayName.call(user, 'Smith');
   sayName.apply(user, ['Smith']);
-	const sayNameFn = sayName.bind(user, 'Burton');
-	sayNameFn();
-	
+  const sayNameFn = sayName.bind(user, 'Burton');
+  sayNameFn();
+
   // create new function with .bind() method
   function count(num) {
     // this === count.bind(arg) arg inside .bind method

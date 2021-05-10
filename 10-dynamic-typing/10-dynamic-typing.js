@@ -9,6 +9,7 @@
   // implicitly intepreter JavaScript
   console.log('null + ""', null + '');                          // 'null'
   console.log('"" + 5', '' + 5);                                // '5'
+  console.log('' + [1, 'hello', true]);                         // '1,hello,true'
 }
 
 { // Number()
@@ -21,6 +22,7 @@
   // explicitly developer
   console.log('+"4"', +'4.00900');                              // 4.009
   console.log('~~"4.99"', ~~'4.99');                            // 4
+  console.log('"5.009" | 0', '5.009' | 0);                      // 5
 }
 
 { // Boolean()

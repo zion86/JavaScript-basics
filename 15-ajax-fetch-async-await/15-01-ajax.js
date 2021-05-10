@@ -1,7 +1,7 @@
 'use strict';
 
 { // 'GET' method
-	// create new AJAX request to GET or SEND data
+  // create new AJAX request to GET or SEND data
   const request = new XMLHttpRequest();
   // initialize request
   // request.open(method, url, async, login, password);
@@ -36,17 +36,17 @@
 }
 
 { // 'POST' method
-	e.preventDefault();
+  e.preventDefault();
 
   const statusMessage = document.createElement('div');
   statusMessage.classList.add('status');
   statusMessage.textContent = message.loading;
   form.append(statusMessage);
 
-	const request = new XMLHttpRequest();
+  const request = new XMLHttpRequest();
   request.open('POST', 'server.php');
-	
-	// formData(form)
+
+  // formData(form)
   // httpRequest() + formData(form) don't use setRequestHeader()
   // request.setRequestHeader('Content-type', 'multipart/form-data');
   // get all data from form inputs (html name attribute)
@@ -64,12 +64,12 @@
 
   request.addEventListener('load', () => {
     if (request.status === 200) {
-			console.log(request.response);
-			statusMessage.textContent = message.success;
-			// clear form data
-			form.reset();
-			// remove notification after xxxx secondr
-			setTimeout(() => statusMessage.remove(), 2000);
+      console.log(request.response);
+      statusMessage.textContent = message.success;
+      // clear form data
+      form.reset();
+      // remove notification after xxxx secondr
+      setTimeout(() => statusMessage.remove(), 2000);
     } else {
       statusMessage.textContent = message.failure;
     }

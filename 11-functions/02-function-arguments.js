@@ -11,22 +11,35 @@
 
 { // ES5
   function printWord(word) {
-    if (word === undefined) {
-      word = 'Hello world!';
-    }
+
+    // v1
+    // if (word === undefined) {
+    //   word = 'Hello world!';
+    // }
+
+    // v2
+    word = word || 'default value';
+
     console.log(word);
-    console.log('Hello user');
   }
 
   printWord();
 }
 
-{ // ES6
-  // function arguments with values by default
+{ // ES6 function arguments with default values
   function calcOrDouble(number, basis = 2) {
     console.log(number * basis);
   }
 
-  calcOrDouble(3); // 6
-  calcOrDouble(3, 2); // 6
+  calcOrDouble(3);      // 6
+  calcOrDouble(3, 2);   // 6
+
+  // object as argument in function
+  const mkString = (array, {
+    separator = ',', leftDelimiter = '[', rightDelimiter = ']'
+  } = {}) => {
+    return `...`;
+  }
+
+  const result = mkString([1, 2, 3]);
 }

@@ -25,12 +25,12 @@
   const john = new User('John', 31);
   const alex = new User('Alex', 33);
 
-  console.log('john: ', john); // john:  User { name: 'John', id: 31, human: true }
-  console.log('alex: ', alex); // alex:  User { name: 'Alex', id: 33, human: true }
+  console.log('john: ', john);        // john:  User { name: 'John', id: 31, human: true }
+  console.log('alex: ', alex);        // alex:  User { name: 'Alex', id: 33, human: true }
 
   // run Object method
-  john.greating(); // Hello John
-  john.exit(); // Bye John
+  john.greating();                    // Hello John
+  john.exit();                        // Bye John
 }
 
 { // ES6 Class

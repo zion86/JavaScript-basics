@@ -40,7 +40,7 @@
       console.error('Data error!!!');
     })
     .finally(() => {
-			// executing after all .then() or .catch()
+      // executing after all .then() or .catch()
       console.log('Finally...');
     });
 }

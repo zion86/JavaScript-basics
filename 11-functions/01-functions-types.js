@@ -18,39 +18,35 @@
   fn1();
 }
 
-
-{
-	// IIFE function declaration function
-  function() {
+{ // IIFE function declaration function
+  (function () {
     console.log(`Anonymus IIFE function declaration function`);
-  }();
-	
-	// IIFE function expression function
-	// local scope, module with local variables
-	(function() {
-		console.log(`Anonymus IIFE function expression function`);
-	}());
-	
-	// create Object module with using IIFE
-	const user = (function() {
-		const privat = function() {
-			console.log('I am privat!');
-		};
-		
-		// create Object with methods
-		return {
-			sayHello: privat
-		};
-	}());
-	
-	// invoke function from Object module
-	user.sayHello();
+  }());
+
+  // IIFE function expression function
+  // local scope, module with local variables
+  (function () {
+    console.log(`Anonymus IIFE function expression function`);
+  }());
+
+  // create Object module with using IIFE
+  const user = (function () {
+    const privat = function () {
+      console.log('I am privat!');
+    };
+
+    // create Object with methods
+    return {
+      sayHello: privat
+    };
+  }());
+
+  // invoke function from Object module
+  user.sayHello();
 }
 
+{ // ES6 Arrow function expression v1 (always LOCAL variable)
 
-{
-  // ES6 Arrow function expression v1 (always LOCAL variable)
-  // --------------------------------------------------------
   // One line expression
   const arrowFn = () => console.log(`Arrow function in one line`);
   arrowFn();
@@ -65,11 +61,10 @@
   (() => console.log(`Arrow function IIFE`))();
 }
 
-{
-  // save value from function to variable
+{ // save value from function to variable
   const fnNum = () => {
     let num = 50;
-		
+
     num += 1;
     return num;
   }
@@ -78,18 +73,16 @@
   console.log('getFnNum: ', getFnNum);
 }
 
-{
-  // callback function
-  // -----------------
+{ // callback function
   function printName(name, callback) {
-		console.log(`My name is ${name}`);
-		callback();
-	}
-	
-	function printText() {
-		console.log('And this is true');
-	}
-	
-	// run callback function
-	printName('Oleg', printText);
- }
+    console.log(`My name is ${name}`);
+    callback();
+  }
+
+  function printText() {
+    console.log('And this is true');
+  }
+
+  // run callback function
+  printName('Oleg', printText);
+}

@@ -27,7 +27,7 @@ const name = 'Andy';
   const name = 'Alex';
 
   // work
-  name.length >= 4 && console.log(name);
+  name.length >= 4 && console.log(name);      // return Boolean true
 
   // not work
   name.length >= 5 && console.log(name);      // return Boolean false

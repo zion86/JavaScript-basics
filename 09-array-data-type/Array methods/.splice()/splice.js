@@ -19,6 +19,6 @@ brands.splice(brands.length, 0, 'google');
 
 // Вирізає вказаний елемент з масиву з x по y включаючи y та вставляє новий елемент
 // --------------------------------------------------------------------------------
-const newCutBrands = brands.splice(2, 1, 'Motorola'); 
+const newCutBrands = brands.splice(2, 1, 'Motorola');
 // console.log(newCutBrands); // [ 'Apple' ]
 // console.log(brands); // [ 'Huawei', 'Nokia', 'Motorola', 'google' ]

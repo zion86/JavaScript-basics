@@ -81,22 +81,22 @@
 }
 
 {
-	const arr = [
-		['Oleg', null],
-		[null, 'Oleg'],
-		['John', 'Alex']
-	];
+  const arr = [
+    ['Oleg', null],
+    [null, 'Oleg'],
+    ['John', 'Alex']
+  ];
 
 
-	function filterList(arr, filterName) {
-		if (filterName === '') {
-			console.log(arr);
-		} else {
-			const filterByName = name => name === filterName ? name : null;
-			const filteredArr = arr.map(row => row.map(filterByName));
-			console.log('filteredArr: ', filteredArr);
-		}
-	};
+  function filterList(arr, filterName) {
+    if (filterName === '') {
+      console.log(arr);
+    } else {
+      const filterByName = name => name === filterName ? name : null;
+      const filteredArr = arr.map(row => row.map(filterByName));
+      console.log('filteredArr: ', filteredArr);
+    }
+  };
 
-	filterList(arr, 'Alex');
+  filterList(arr, 'Alex');
 }

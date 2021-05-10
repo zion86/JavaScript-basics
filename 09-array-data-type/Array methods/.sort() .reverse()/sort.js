@@ -4,10 +4,10 @@
 const unsortedList = ['c', 'a', 'b', 'f', 'e', 'd'];
 const unsortedDigits = [2, 5, 1, 3, 4];
 const votes = [
-	{title: 'Apple', votes: 1},
-	{title: 'Milk', votes: 2},
-	{title: 'Carrot', votes: 3},
-	{title: 'Banana', votes: 2},
+  { title: 'Apple', votes: 1 },
+  { title: 'Milk', votes: 2 },
+  { title: 'Carrot', votes: 3 },
+  { title: 'Banana', votes: 2 },
 ];
 
 // sort a - z
@@ -33,9 +33,9 @@ const sortDigitsDesc = unsortedDigits.sort((a, b) => b - a);
 // sort Array of Objects
 // ---------------------
 const sortVotesTitle = votes.sort((a, b) => (
-  a.votes < b.votes ? -1 : a.votes > b.votes ? 1 : 0 
-  &&
-  a.title < b.title ? -1 : a.title > b.title ? 1 : 0
+  a.votes < b.votes ? -1 : a.votes > b.votes ? 1 : 0
+    &&
+    a.title < b.title ? -1 : a.title > b.title ? 1 : 0
 ));
 // console.log(sortVotesTitle);
 // [{title: 'Apple', votes: 1}, {title: 'Milk', votes: 2}, {title: 'Carrot', votes: 3}, {title: 'Banana', votes: 2}]
