@@ -1,6 +1,6 @@
 'use strict';
 
-{ // ES6 Class (superclass)
+{ // ES6 Class declaration (superclass)
   class Rectangle {
 
     // create constructor function
@@ -40,6 +40,22 @@
   const longRegtangle = new ColoredRectangleWithText(10, 100, 'Long Regtangle', 'green');
   longRegtangle.showMyProps();          // text: Long Regtangle, bgColor: green
   longRegtangle.calcArea();             // 1000
+}
+
+{ // ES6 Class expression
+	const Rectangle = class {
+
+    // create constructor function
+    constructor(height, width) {
+      this.height = height;
+      this.width = width;
+    }
+
+    // create class method
+    calcArea() {
+      return this.height * this.width;
+    }
+  };
 }
 
 { // experimental
