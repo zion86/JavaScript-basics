@@ -1,8 +1,8 @@
 'use strict';
 
 // ES 5 function Constructor
-{
-  // create function Constructor
+
+{ // function Constructor
   function User(name, id) {
     this.name = name;
     this.id = id;
@@ -14,7 +14,19 @@
     this.greating = function () {
       console.log(`Hello ${this.name}`);
     }
-  };
+  }
+	
+	// create another function Constructor with inheritance
+	const Coder = function(param) {
+		// inheritance from User Constructor
+		User.apply(this, arguments);
+		
+		this.side = param.side;
+	};
+	
+	// inheritance from parent constructor
+	Coder.prototype = Object.create(User.prototype);
+	Coder.prototype.constructor = User;
 
   // create method for function Constructor
   User.prototype.exit = function () {

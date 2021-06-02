@@ -3,7 +3,7 @@
 { // ES6 Class declaration (superclass)
   class Rectangle {
 
-    // create constructor function
+    // create constructor method, invoke after create new Class (const alex = new User('Alex', 32);)
     constructor(height, width) {
       this.height = height;
       this.width = width;

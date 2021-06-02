@@ -1,7 +1,6 @@
 'use strict';
 
-{
-  // function declaration (always GLOBAL variable on TOP)
+{ // function declaration (always GLOBAL variable on TOP)
   // first can run function and then create function
   // hoisting
   fn();
@@ -9,8 +8,9 @@
   function fn() {
     console.log(`First run function and then create it`);
   };
+}
 
-  // function expression (always LOCAL variable)
+{ // function expression (always LOCAL variable)
   // first create function and then run it
   const fn1 = function () {
     console.log(`function expression`);

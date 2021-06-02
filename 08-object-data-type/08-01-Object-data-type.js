@@ -1,7 +1,12 @@
 { // Object not can convert to String [object, Object]
-  const obj = {
+
+	// v1 create new Object
+  const obj1 = {
     key: 'value'
   };
+	
+	// v2 create new Object
+	const obj2 = new Object();
 }
 
 { // create Object literal
@@ -25,10 +30,10 @@
   };
 
   // read values from Object
-  console.log(options.name);									// text
-  console.log(options.colors.bg);							// red
-  console.log(options['name']);								// text
-  console.log(options['colors']['bg']);				// red
+  console.log(options.name);										// text
+  console.log(options.colors.bg);								// red
+  console.log(options['name']);									// text
+  console.log(options['colors']['bg']);					// red
 
   // run Object method
   options.makeTest();
@@ -44,4 +49,5 @@
 
   const nameLength = person?.name?.length       // return person.name, name length = 4
   const personAge = person?.age;                // return undefined, person.age not exist
+	const personName = person?.name;							// return 'Alex'
 }
