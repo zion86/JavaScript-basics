@@ -1,7 +1,8 @@
 'use strict';
 
-// var 'hoisting' can invoke variable before creating
+// var, function declaration has 'hoisting'
 
+// var 'hoisting' can invoke variable before creating
 console.log('globalVariable: ', globalVariable);  // return globalVariable: undefined
 
 var globalVariable;                               // create empty variable

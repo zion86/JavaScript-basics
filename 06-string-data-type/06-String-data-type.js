@@ -1,15 +1,19 @@
-'use strict';
+// 'use strict';
 
 { // String data type
 
-  const time = `18:00:00`;
-  const pet = "dog";
-  const name = 'Alex';
-  console.log('name: ', name);
+  let userName = 'Alex';                                  // 'Alex'
+  const pet = "dog";                                      // 'dog'
+  let stringConcatenation = 'A ' + 'B';                   // 'A B'
+  let stringLiteral = `18:00:00`;                         // '18:00:00'
+  const expressionInterpolation = `${userName} ${pet}`;   // 'Alex dog'
 
-  const nameLength = name.length;               // return string length
-  console.log('nameLength: ', nameLength);
+  const escapeCharacter = 'hello \'word\'';               // 'hello 'word''
 
-  const getCharacter = name[2];                 // return 'e'
-  console.log('getCharacter: ', getCharacter);
+  userName.toLowerCase();                                 // 'Alex'
+  userName = userName.toLowerCase();                      // 'alex'
+
+  const nameLength = userName.length;                     // String length 4
+
+  const getCharacter = userName[2];                       // 'e'
 }

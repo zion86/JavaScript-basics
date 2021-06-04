@@ -1,11 +1,8 @@
 'use strict';
 
 { // const
-  // local scope
-
   const BORNYEAR = 1900;                          // local variable
   console.log('BORNYEAR: ', BORNYEAR);
-
   // BORNYEAR = 1901;                             // TypeError: Assignment to constant variable.
 }
 
