@@ -9,7 +9,6 @@ const developer = {
 
 
 { // ES6 for in (Object) iterate only keys in Object or index in Array
-
   for (let key in developer) {
     console.log(`${key}: ${developer[key]}`);	// key: value
     // name: Oleg

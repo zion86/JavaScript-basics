@@ -1,21 +1,22 @@
 'use strict';
 
 // global variable
-const name = 'Andy';
+const userName = 'Andy';
 
 { // switch
-  switch (name) {
+  switch (userName) {
 
     case 'Peter':
-      console.log('User name is: ' + name);
+      console.log('User name is: ' + userName);
       break;
 
     case 'Andy':
-      console.log('User name is: ' + name);
+    case 'andy': // can use multiple cases for check
+      console.log('User name is: ' + userName);
       break;
 
     default:
       console.log('switch: Please enter user name');
-      break;
+    // break;
   }
 }

@@ -61,3 +61,16 @@
   counter3.dec(); // 1
   counter3.res(); // 0
 }
+
+
+{ // save value from function to variable
+  const fnNum = () => {
+    let num = 50;
+
+    num += 1;
+    return num;
+  }
+
+  let getFnNum = fnNum();
+  console.log('getFnNum: ', getFnNum);
+}

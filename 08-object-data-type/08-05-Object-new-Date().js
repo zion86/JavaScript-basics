@@ -1,7 +1,6 @@
 'use strict';
 
-{
-  // create Date variable
+{ // create Date variable
   const now = new Date();
 
   // read current date and time

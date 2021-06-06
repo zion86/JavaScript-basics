@@ -1,5 +1,14 @@
 'use strict';
 
+{ // function name, arguments
+  const fn = function funcName() {
+    console.log(fn.name);       // 'funcName'
+    console.log(fn.arguments);  // ['hello', 'world', 3]
+  };
+
+  fn('hello', 'world', 3);
+}
+
 { // ...rest operator always go last in list
   const log = (arg1, arg2, ...restArgs) => {
     // ...rest operator return Array with elements

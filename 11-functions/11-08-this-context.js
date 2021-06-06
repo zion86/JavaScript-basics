@@ -15,7 +15,7 @@
     };
 
     console.log(sum());
-  };
+  }
 
   showThis();
 }
@@ -39,7 +39,7 @@
     }
   };
 
-  obj.sum();
+  obj.sum(); // this has reference on self Object from left side obj.method()
 }
 
 { // this inside function Constructors and Class === new inheritance Object
@@ -60,23 +60,48 @@
 }
 
 { // manual bind this .call() .apply() .bind()
+
+  const user = {
+    name: 'Alex'
+  };
+
   // add arguments in function
   function sayName(surname) {
     console.log(this);
     console.log(this.name + ' ' + surname);
   };
 
+  // dynamicly bind Object with function using Object reference
+  user.sayName = sayName;
+
+  // call Object binded method
+  user.sayName('Smit');
+}
+
+{ // manual bind this .call() .apply() .bind()
   const user = {
     name: 'Alex'
+  };
+
+  // add arguments in function
+  function sayName(surname) {
+    console.log(this);
+    console.log(this.name + ' ' + surname);
   };
 
   // bind function with Object to get function with Object context
   // similar Object.method(this)
   // add arguments from function
+
+  // .bind function to the Object
+  const sayFullNameFn = sayName.bind(user, 'Burton');
+  // call binded function
+  sayFullNameFn();
+
+  // call function with (this context)
   sayName.call(user, 'Smith');
   sayName.apply(user, ['Smith']);
-  const sayNameFn = sayName.bind(user, 'Burton');
-  sayNameFn();
+
 
   // create new function with .bind() method
   function count(num) {

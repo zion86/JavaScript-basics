@@ -46,3 +46,8 @@
   const addToEnd = [...addToStart, 'last word'];          // [ 'first word', 'hello', 'world', 'last word' ]
   const merge2Arrays = [...addToStart, ...addToEnd];
 }
+
+{ // Array looping
+	const arr = [];
+	arr.push(arr);
+}

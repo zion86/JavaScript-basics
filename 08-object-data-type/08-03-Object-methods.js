@@ -11,13 +11,14 @@
   };
 
   // create Array with keys names from Object
-  console.log(Object.keys(options).length); // ['name', 'width', 'colors']
+  Object.keys(options);           // ['name', 'width', 'colors']
+  Object.keys(options).length;    // 4
 
   // return Array with pairs [ [key, value] ]
-  console.log(Object.entries(options));
+  Object.entries(options);
   // [
-  //  ['name', 'text'],
-  //  ['width', 1024],
-  //  ['colors', { bg: 'red', color: 'black' }]
+  //    ['name', 'text'],
+  //    ['width', 1024],
+  //    ['colors', { bg: 'red', color: 'black' }]
   // ]
 }
