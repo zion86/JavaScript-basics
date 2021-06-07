@@ -59,8 +59,7 @@
   alex.greating();
 }
 
-{ // manual bind this .call() .apply() .bind()
-
+{ // manual bind this using reference
   const user = {
     name: 'Alex'
   };

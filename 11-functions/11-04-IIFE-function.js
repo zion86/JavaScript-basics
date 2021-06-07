@@ -10,7 +10,7 @@
 
   // IIFE function expression function
   // local scope, module with local variables
-  (function () {
+  const namedIIFE = (function () {
     console.log(`Anonymus IIFE function expression function`);
   }());
 }

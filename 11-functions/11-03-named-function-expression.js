@@ -2,7 +2,7 @@
 
 // named function expression
 const fn = function addNumbers(x) {
-  console.log(fn.name);
+  console.log(name);
   console.log(x);
 };
 
