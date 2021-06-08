@@ -1,5 +1,8 @@
 'use strict';
 
+//  Primitive data types
+// ---------------------
+
 { // string
   const text = 'string';
   console.log('text: ', typeof (text));                 // string
@@ -48,6 +51,9 @@
   const person = Symbol();
   console.log('person: ', typeof (person));             // symbol
 }
+
+// Object data types
+// -----------------
 
 { // object
   const arr = [];
