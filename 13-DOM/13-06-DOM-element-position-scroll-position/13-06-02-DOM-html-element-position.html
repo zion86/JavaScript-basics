@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM element position, scroll</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .parent {
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+      max-width: 960px;
+      background-color: rgba(60, 60, 60, 0.1);
+    }
+
+    .child {
+      /* full width = border + padding + width */
+      width: 400px;
+      height: 200px;
+      padding: 25px;
+      border: 25px solid #E8C48F;
+      overflow: auto;
+    }
+
+    .box {
+      margin: auto;
+      width: 200px;
+      height: 70px;
+      padding: 20px;
+      border: 10px solid grey;
+    }
+
+    .box-fixed {
+      background-color: yellow;
+      position: fixed;
+      right: 10%;
+      bottom: 5%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="parent">
+    <p class="child">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, assumenda, dignissimos aliquid ea modi quo dolor quasi sapiente quis dolores odit qui impedit, nulla laudantium voluptatibus eius tempora inventore. Expedita labore nemo ab accusantium cumque in adipisci asperiores excepturi temporibus, facere cupiditate beatae nostrum quidem corrupti alias nihil sit sint cum. Qui veritatis labore commodi consequuntur sed dolorum quasi totam asperiores, repellendus nostrum iusto autem vero debitis error ipsum facere? Repellendus aspernatur sed facilis soluta laudantium quod sequi ut, obcaecati minus odio quaerat placeat iste assumenda iusto vel aliquid veritatis explicabo perspiciatis aperiam animi. Temporibus vero facilis iste tempora recusandae.</p>
+  </div>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore cum dicta adipisci mollitia nam illo maxime laboriosam aspernatur quasi ad veniam eligendi, cumque, officia delectus sunt optio harum necessitatibus consequatur.</p>
+  <p>Laborum, quia totam. Iste ullam necessitatibus, veniam, ipsum error sed similique quia quas voluptas itaque corrupti tempora molestias exercitationem esse? Modi eaque quia explicabo molestiae rem sint dolorem! Laudantium, minima!</p>
+  <p>Doloremque ullam magnam porro accusantium. Aut possimus hic perferendis nemo magni ipsum tempora dolores aliquid laborum ipsam facilis labore, totam facere vitae ratione dolorem nulla ex, eum sequi a officia?</p>
+  <p>Fugit excepturi voluptate vero, eveniet quis dolor! Dolorum quas dolorem quod illo adipisci, error inventore quae deleniti quo eaque distinctio soluta omnis vero, eius reprehenderit accusamus delectus perferendis voluptatem mollitia.</p>
+  <p>Officiis cumque, qui odit vitae praesentium soluta ea ipsum reprehenderit fugit! Minima, iure veniam? Porro voluptates natus, praesentium quos, distinctio dolorum minima eveniet fuga blanditiis, ab quisquam unde rerum quo.</p>
+  <p>Nostrum dolores voluptate sint nisi. At saepe natus, corrupti sapiente dolor ex qui, earum, minus obcaecati repudiandae dicta tempora. Dolor error perspiciatis ipsam voluptate sunt quod! Quod ipsum sit natus.</p>
+  <div class="box box-relative">Relative box</div>
+  <p>Placeat earum praesentium nam blanditiis deserunt, molestiae expedita nobis ad officiis, quo id ipsam obcaecati? Vitae, odio commodi, nostrum expedita harum deleniti quo error repudiandae enim nisi at nam perspiciatis.</p>
+  <p>Tempora labore, accusamus autem possimus nesciunt molestiae dicta nulla atque unde placeat cumque iure voluptas quos dolorum enim nam reprehenderit eligendi! Dolor sint pariatur veniam debitis quos sit distinctio? Aliquid.</p>
+  <p>Fuga laudantium aspernatur fugiat explicabo animi iusto voluptas libero possimus ab perspiciatis quaerat, et laborum exercitationem rem autem vel dicta tempora officiis id odit ad laboriosam. Dolorum aliquam voluptatibus error!</p>
+  <div class="box box-fixed">Fixed box</div>
+  <p>Fugit aspernatur modi veniam illo error magnam possimus neque laudantium, libero perspiciatis, dicta optio dolores fugiat, eius ea impedit quam veritatis ratione. Totam soluta quae maxime reiciendis aliquam nisi minima.</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Fugit aspernatur modi veniam illo error magnam possimus neque laudantium, libero perspiciatis, dicta optio dolores fugiat, eius ea impedit quam veritatis ratione. Totam soluta quae maxime reiciendis aliquam nisi minima.</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Fugit aspernatur modi veniam illo error magnam possimus neque laudantium, libero perspiciatis, dicta optio dolores fugiat, eius ea impedit quam veritatis ratione. Totam soluta quae maxime reiciendis aliquam nisi minima.</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Fugit aspernatur modi veniam illo error magnam possimus neque laudantium, libero perspiciatis, dicta optio dolores fugiat, eius ea impedit quam veritatis ratione. Totam soluta quae maxime reiciendis aliquam nisi minima.</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Fugit aspernatur modi veniam illo error magnam possimus neque laudantium, libero perspiciatis, dicta optio dolores fugiat, eius ea impedit quam veritatis ratione. Totam soluta quae maxime reiciendis aliquam nisi minima.</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Fugit aspernatur modi veniam illo error magnam possimus neque laudantium, libero perspiciatis, dicta optio dolores fugiat, eius ea impedit quam veritatis ratione. Totam soluta quae maxime reiciendis aliquam nisi minima.</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Fugit aspernatur modi veniam illo error magnam possimus neque laudantium, libero perspiciatis, dicta optio dolores fugiat, eius ea impedit quam veritatis ratione. Totam soluta quae maxime reiciendis aliquam nisi minima.</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Fugit aspernatur modi veniam illo error magnam possimus neque laudantium, libero perspiciatis, dicta optio dolores fugiat, eius ea impedit quam veritatis ratione. Totam soluta quae maxime reiciendis aliquam nisi minima.</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Fugit aspernatur modi veniam illo error magnam possimus neque laudantium, libero perspiciatis, dicta optio dolores fugiat, eius ea impedit quam veritatis ratione. Totam soluta quae maxime reiciendis aliquam nisi minima.</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+  <p>Fugit aspernatur modi veniam illo error magnam possimus neque laudantium, libero perspiciatis, dicta optio dolores fugiat, eius ea impedit quam veritatis ratione. Totam soluta quae maxime reiciendis aliquam nisi minima.</p>
+  <p>Atque nostrum, ab alias, nemo odio eveniet qui, error itaque ullam natus cum doloremque doloribus distinctio nisi ipsa sequi dolorem voluptatibus asperiores ipsam dicta nulla? Et quam architecto nulla veniam?</p>
+
+  <script src="13-06-02-DOM-html-element-position.js"></script>
+
+</body>
+
+</html>

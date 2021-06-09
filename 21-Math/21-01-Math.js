@@ -10,7 +10,7 @@
   console.log('formMinToMax: ', formMinToMax);
 
   // include maxNumber value
-  const formMinToMaxIncludeMax = minNumber + Math.floor((maxNumber - minNumber + 1) * Math.random());
+  const formMinToMaxIncludeMax = minNumber + Math.floor(Math.random() * (maxNumber - minNumber + 1));
   console.log('formMinToMaxIncludeMax: ', formMinToMaxIncludeMax);
 }
 
