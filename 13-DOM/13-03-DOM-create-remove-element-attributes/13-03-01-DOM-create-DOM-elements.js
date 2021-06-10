@@ -1,10 +1,10 @@
 'use strict';
 
 { // v1
-  // create new HTML element in page
+  // create new HTMLElement in page
   const ul = document.createElement('ul');
 
-  // insert HTML elemend in to the end of body tag
+  // insert HTMLElemend in to the end of body tag
   document.body.append(ul);
 
   // create text Node
@@ -26,7 +26,7 @@
 }
 
 { // v2
-  // create new HTML element in page
+  // create new HTMLElement in page
   const ol = document.querySelector('ol');
 
   // add to the begin of the list
@@ -39,17 +39,17 @@
   lastLiElem.textContent = 'last <li> element';
   ol.append(lastLiElem);
 
-  // add Element before ol tag
+  // add HTMLElement before ol tag
   const pBeforeOl = document.createElement('p');
   pBeforeOl.textContent = 'add <p> before <ol>';
   ol.before(pBeforeOl);
 
-  // add Element after ol tag
+  // add HTMLElement after ol tag
   const pAfterOl = document.createElement('p');
   pAfterOl.textContent = 'add <p> after <ol>';
   ol.after(pAfterOl);
 
-  // delete Element element
+  // delete HTMLElement
   firstLiElem.remove();
   lastLiElem.remove();
 }
@@ -60,12 +60,20 @@
 
   ol.before(nav);
 
-  { // replace old HTML Element to new the HTML Element
+  { // replace old HTMLElement to new the HTMLElement
     const activeLink = nav.querySelector('.active');
     const a = document.createElement('a');
 
     a.href = '#!';
     a.textContent = 'New address';
     activeLink.replaceWith(a);
+  }
+
+  { // create HTMLElement deep copy
+    const navCopy = nav.cloneNode(true);
+
+    // add HTMLElement copy to the document
+    document.querySelector('ul')
+      .after(navCopy);
   }
 }
