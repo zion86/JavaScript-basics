@@ -11,4 +11,6 @@
   console.log('"" + 5', '' + 5);                                // '5'
   console.log('5 + "5"', 5 + '5');                              // '55'
   console.log('' + [1, 'hello', true]);                         // '1,hello,true'
+  console.log('[] + []', [] + []);                              // ''
+  console.log('[] + {}', [] + {});                              // '[object Object]'
 }
