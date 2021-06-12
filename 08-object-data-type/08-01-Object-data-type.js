@@ -15,8 +15,8 @@
   const options = {
 
     // key: value
-    name: 'text',                         // Object field
-    width: 1024,                          // Object propertie
+    name: 'text',                         // Object propertie or field
+    width: 1024,
     colors: {
       bg: 'red',
       color: 'black',
@@ -27,16 +27,16 @@
       console.log('Test');
     },
 
-    makeTest1() {                         // create ES6 Object method makeTest()
+    makeTest1() {                         // create ES6 Object method makeTest1()
       console.log('Test 1');
     },
   };
 
   // read values from Object
-  options.name;                           // text
-  options.colors.bg;                      // red
-  options['name'];                        // text
-  options['colors']['bg'];                // red
+  options.name;                           // 'text'
+  options.colors.bg;                      // 'red'
+  options['name'];                        // 'text'
+  options['colors']['bg'];                // 'red'
 
   // add new propertie to the Object
   options.length = 4;
