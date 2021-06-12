@@ -1,0 +1,1 @@
+console.log('External js file at the bottom of BODY tag');

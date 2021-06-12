@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect js scripts inside HTML file</title>
+
+  <!-- v1 external script file with defer attribute -->
+  <script src="01-02-connect-js.js" defer></script>
+
+</head>
+
+<body>
+
+  <h1>Hello JS</h1>
+
+  <!-- v2 internal script inside HTML file -->
+  <script>
+    console.log('internal script inside HTML file');
+  </script>
+
+  <!-- v3 external script file -->
+  <script src="01-03-connect-js.js"></script>
+
+</body>
+
+</html>

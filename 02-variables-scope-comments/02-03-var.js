@@ -1,9 +1,12 @@
 'use strict';
 
+// var keyword
 // var always has global scope, var only inside function has local scope.
 
-var name = 'Alex';                         // 'Alex'
-var name = 'John';                         // 'John'
+var userName = 'Alex';                         // 'Alex'
+var userName = 'John';                         // 'John'
+userName = 'Katty';                            // 'Katty'
+
 
 // only inside functions var has local scope
 function sayHello() {

@@ -62,7 +62,7 @@
   console.log('obj: ', typeof (obj));                   // object
 }
 
-{ // function
+{ // function (object)
   function fn() { };
   console.log('fn: ', typeof (fn));                     // function
 }

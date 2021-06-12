@@ -1,6 +1,5 @@
 'use strict';
 
-
 // GLOBAL scope: var, function fName() {} (have hoisting)
 // LOCAL scope: let, const, const localFn = () => {};
 
@@ -20,7 +19,7 @@ const globalConst = 'global const';
 { // local scope for let, const
 
   // let variable
-  let date = '01.01.1990';                    // '01.01.1990'
+  let date = '01.01.1990';                     // '01.01.1990'
 
   // function assignment
   const localFn = () => {
@@ -34,6 +33,13 @@ const globalConst = 'global const';
   function showDate() {
     console.log(`The date is: '01.01.1990'`);
   }
+
+
+  // reading varibles
+  date;                                       // '01.01.1990'
+  localFn();                                  // 'local function (local variable)'
+  userName;                                   // 'Alex'
+  showDate();                                 // 'The date is: '01.01.1990''
 }
 
 // console.log(date);                         // ReferenceError: date is not defined

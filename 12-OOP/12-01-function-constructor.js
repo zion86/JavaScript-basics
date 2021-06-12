@@ -10,7 +10,7 @@
     // global argument for all inheritance
     this.human = true;
 
-    // create method inside function
+    // create method inside function Constructor
     this.greating = function () {
       console.log(`Hello ${this.name}`);
     }

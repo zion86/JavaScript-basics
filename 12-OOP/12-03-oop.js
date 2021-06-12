@@ -1,8 +1,10 @@
-{
-  // create Prototype Object
+'use strict';
+
+{ // create Prototype Object
   const solder = {
     health: 400,
     armour: 100,
+		
     // Prototype method
     sayHello: function () {
       console.log('Say hello');

@@ -21,6 +21,7 @@
 
     constructor(height, width, text, bgColor) {   // extend arguments
       super(height, width);                       // inheritance arguments from superclass
+			
       this.text = text;
       this.bgColor = bgColor;
     }
@@ -36,7 +37,7 @@
   const square = new Rectangle(10, 10);
   square.calcArea();
 
-  // create new Object copy from extendede class
+  // create new Object copy from extended class
   const longRegtangle = new ColoredRectangleWithText(10, 100, 'Long Regtangle', 'green');
   longRegtangle.showMyProps();          // text: Long Regtangle, bgColor: green
   longRegtangle.calcArea();             // 1000
