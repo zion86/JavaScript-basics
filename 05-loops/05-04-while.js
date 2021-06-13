@@ -12,13 +12,12 @@
 }
 
 { // while loop (example)
-	
-	let number = 101;
-	
-	while (number > 0) {
-		const digit = number % 10;
-		number = parseInt(number / 10);
-		
-		console.log(digit);
-	}
+  let number = 101;
+
+  while (number > 0) {
+    const digit = number % 10;
+    number = parseInt(number / 10);
+
+    console.log(digit);
+  }
 }

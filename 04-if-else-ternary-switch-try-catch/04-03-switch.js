@@ -3,7 +3,7 @@
 // global variable
 const userName = 'Andy';
 
-{ // switch
+{ // switch always has strict compare 1 !== '1', 1 === 1
   switch (userName) {
 
     case 'Peter':
@@ -17,6 +17,6 @@ const userName = 'Andy';
 
     default:
       console.log('switch: Please enter user name');
-    // break;
+      break;
   }
 }

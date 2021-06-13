@@ -3,7 +3,6 @@
 // Array
 const arr = ['one', 2, true, 'four'];
 
-
 { // for loop
   for (let i = 0; i < 3; i++) {
     console.log(i);
@@ -12,7 +11,6 @@ const arr = ['one', 2, true, 'four'];
     // 2
   };
 }
-
 
 {
   for (let i = 0; i < arr.length; i++) {
@@ -23,7 +21,6 @@ const arr = ['one', 2, true, 'four'];
     // 'four'
   }
 }
-
 
 { // for loop with break or continue
   for (let i = 0; i < 3; i++) {
@@ -45,7 +42,6 @@ const arr = ['one', 2, true, 'four'];
     console.log(i);
   }
 }
-
 
 { // loop label
   mainloop: for (let i = 0; i <= 5; i++) {
