@@ -5,28 +5,31 @@ const arr = ['one', 2, true, 'four'];
 
 { // for loop
   for (let i = 0; i < 3; i++) {
-    console.log(i);
-    // 0
-    // 1
-    // 2
+    console.log(i);               // loop iteration 
   };
+
+  // 0
+  // 1
+  // 2
 }
 
 {
   for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
-    // 'one'
-    // 2
-    // true
-    // 'four'
   }
+
+  // 'one'
+  // 2
+  // true
+  // 'four'
 }
 
 { // for loop with break or continue
   for (let i = 0; i < 3; i++) {
     if (i === 1) {
       console.log(`${i} === 1, for loop is stoped!`);
-      break;
+      break;                      // stop and exit from loop
+      // console.log('Hello');    // code will be ignored
     }
 
     console.log(i);
@@ -36,7 +39,8 @@ const arr = ['one', 2, true, 'four'];
   for (let i = 0; i < 3; i++) {
     if (i === 1) {
       console.log(`${i} === 1, for loop miss 1`);
-      continue;
+      continue;                   // skip current iteration
+      // console.log('Hello');    // code will be ignored
     }
 
     console.log(i);
@@ -52,7 +56,8 @@ const arr = ['one', 2, true, 'four'];
         console.log({ i, j, k });
 
         if (i * j * k >= 100) {
-          // with loop label break all loops
+          // with loop label + break can stop outer loop
+          // with loop label + continue can skip outer loop iteration
           break mainloop;
         }
       }
