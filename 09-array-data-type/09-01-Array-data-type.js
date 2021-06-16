@@ -1,53 +1,55 @@
 'use strict';
 
-{ // Array constructor
-  // .fill(value, start, end(not included)) fill Array with static values
-  const constructorArray = new Array(4).fill('A', 1, 3);  // [ empty, 'A', 'A', empty ]
+{ // array literal
+  const arrayLiteral = ['ua', 'ru', 'en', 'gr'];
 
-  // Create Array literal
-  const lang = ['ua', 'ru', 'en', 'gr'];
+  // array Constructor
+  const constructorArray = new Array();                         // []
 
-  // Array length
-  const langLength = lang.length;                         // 4
+  const arrayLength = arrayLiteral.length;                      // 4
+  const firstArrayElem = arrayLiteral[0];                       // 'ua'
+  const lastArrayElem = arrayLiteral[arrayLiteral.length - 1];  // 'gr'
 
-  const firstElem = lang[0];                              // ua - first element
-  const lastElem = lang[lang.length - 1];                 // gr - last element
+  // change Array length (delete rest Array elements)
+  arrayLiteral.length = 2;                                      // [ 'ua', 'ru' ]
 }
 
 
 { // copy Array or reference Array
-  const lang = ['ua', 'ru', 'en', 'gr'];
-  console.log('lang: ', lang);                            // lang:  [ 'ua', 'ru', 'en', 'gr' ]
+  const lang = ['ua', 'ru', 'en', 'gr'];                        // [ 'ua', 'ru', 'en', 'gr' ]
 
-  // reference to old Array (not copy)
-  const arrReference = lang;
-  console.log('arrReference: ', arrReference);            // arrReference:  [ 'ua', 'ru', 'en', 'gr']
+  // reference to old Array (not copy) 
+  const arrReference = lang;                                    // [ 'ua', 'ru', 'en', 'gr' ]
 
-  // copy Array with .slice() method
-  const copyArrSlice = lang.slice();
-  console.log('copyArrSlice: ', copyArrSlice);            // copyArrSlice: ['ua', 'ru', 'en', 'gr']
+  // create new Array with prev Array copy using.slice() method
+  const copyArrSlice = lang.slice();                            // ['ua', 'ru', 'en', 'gr' ]
 
-  // // copy Array with Spread operator ...
-  const copyArrSpread = [...lang];
-  console.log('copyArrSpread: ', copyArrSpread);          // copyArrSpread:  [ 'ua', 'ru', 'en', 'gr' ]
+  // create new Array with using Spread operator ...
+  const copyArrSpread = [...lang];                              // [ 'ua', 'ru', 'en', 'gr' ]
 
-  // change first Array elem
+  // change first Array element
   lang[0] = 'error';
 
-  // new Array reference to old Array
-  console.log('arrReference: ', arrReference);            // arrReference: [ 'error', 'ru', 'en', 'gr' ]
-  console.log('copyArrSlice: ', copyArrSlice);            // copyArrSlice: [ 'ua', 'ru', 'en', 'gr' ]
-  console.log('copyArrSpread: ', copyArrSpread);          // copyArrSpread: [ 'ua', 'ru', 'en', 'gr' ]
+
+  // new Array reference to the old Array
+  console.log('lang: ', lang);                                  // lang: [ 'error', 'ru', 'en', 'gr' ]
+  console.log('arrReference: ', arrReference);                  // arrReference: [ 'error', 'ru', 'en', 'gr' ]
+
+  // Array copies
+  console.log('copyArrSlice: ', copyArrSlice);                  // copyArrSlice: [ 'ua', 'ru', 'en', 'gr' ]
+  console.log('copyArrSpread: ', copyArrSpread);                // copyArrSpread: [ 'ua', 'ru', 'en', 'gr' ]
 
 
   // merge 2 Arrays with (...spread) operator
-  const simpleArray = ['hello', 'world'];                 // [ 'hello', 'world' ]
-  const addToStart = ['first word', ...simpleArray];      // [ 'first word', 'hello', 'world' ]
-  const addToEnd = [...addToStart, 'last word'];          // [ 'first word', 'hello', 'world', 'last word' ]
-  const merge2Arrays = [...addToStart, ...addToEnd];
+  const simpleArray = ['hello', 'world'];                       // [ 'hello', 'world' ]
+  const addToStart = ['first word', ...simpleArray];            // [ 'first word', 'hello', 'world' ]
+  const addToEnd = [...addToStart, 'last word'];                // [ 'first word', 'hello', 'world', 'last word' ]
+  const merge2Arrays = [...addToStart, ...addToEnd];            // [ 'first word', hello', 'world', 'first word', 'hello', 'world', 'last word' ]
 }
 
 { // Array looping
-	const arr = [];
-	arr.push(arr);
+  const arr = [];
+  arr.push(arr);
+
+  // console.log(arr.push(this));
 }
