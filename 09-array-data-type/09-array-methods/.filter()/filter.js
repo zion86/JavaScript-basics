@@ -1,6 +1,5 @@
-'use strict';
-
-// .filter() return new Array with true values (not mutate)
+// .filter()
+// return new Array with true values
 
 {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
