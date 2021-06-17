@@ -1,6 +1,5 @@
-
-// .reduce() return new Array convert data to one value
-
+// .reduce(callback, value)
+// return new Array convert data to one value
 
 {
   const numbers = [2, 3, 1];

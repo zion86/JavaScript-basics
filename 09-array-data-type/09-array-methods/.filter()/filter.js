@@ -13,15 +13,14 @@
         ? add = [...add, num]
         : num
   ));
-  console.log('odd: ', odd); // [ 2, 4, 6, 8, 10 ]
-  console.log('add: ', add); // [ 1, 3, 5, 7, 9 ]
+  console.log('odd: ', odd);                                    // [ 2, 4, 6, 8, 10 ]
+  console.log('add: ', add);                                    // [ 1, 3, 5, 7, 9 ]
 }
 
 {
   // filter positive numbers
   let arrNumbers = [1, -1, 2, -2, 3];
-  let positiveArr = arrNumbers.filter(number => number > 0);
-  console.log('positiveArr: ', positiveArr); // 1,2,3
+  let positiveArr = arrNumbers.filter(number => number > 0);    // 1,2,3
 }
 
 {
@@ -34,20 +33,17 @@
   ];
 
   const deletePilot = pilots.filter(({ id }) => id !== 40);
-  console.log('deletePilot: ', deletePilot);
   // [ { id: 2, name: 'Wedge Antilles', faction: 'Rebels' },
   //   { id: 8, name: 'Ciena Ree', faction: 'Empire' },
   //   { id: 66, name: 'Thane Kyrell', faction: 'Rebels' } ]
 
   // find Object in Array by 'value'
   const findName = pilots.filter(({ name }) => name.toLowerCase().includes('ll'));
-  console.log('findName: ', findName);
   // [ { id: 2, name: 'Wedge Antilles', faction: 'Rebels' },
   //   { id: 66, name: 'Thane Kyrell', faction: 'Rebels' } ]
 
   // filtering list by category
   const filterCategory = pilots.filter(({ faction }) => faction === 'Rebels');
-  console.log('filterCategory: ', filterCategory);
   // [ { id: 2, name: 'Wedge Antilles', faction: 'Rebels' },
   //   { id: 66, name: 'Thane Kyrell', faction: 'Rebels' } ]
 }
@@ -76,6 +72,5 @@
   // declaretive programing
   const isAdmin = user => user.type === 'admin';
   const adminsList = users.filter(isAdmin);
-  console.log('adminsList: ', adminsList);
   // [{type: 'admin', name: 'Ivan Ivanov'}, {type: 'admin', name: 'Irina Sokolova'}]
 }

@@ -1,6 +1,5 @@
-'use strict';
-
-// .map() return new Array with modified data
+// .map(callback)
+// return new Array with modified data
 
 {
   const cart = [

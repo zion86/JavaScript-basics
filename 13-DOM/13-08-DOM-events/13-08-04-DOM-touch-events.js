@@ -27,7 +27,7 @@
       e.preventDefault();
 
       if (e.type === 'touchstart') div.textContent = 'Touch start';
-      if (e.type === 'touchmove') div.textContent = `Touch move`;
+      if (e.type === 'touchmove') div.textContent = 'Touch move';
       if (e.type === 'touchend') div.textContent = 'Touch end';
     };
 

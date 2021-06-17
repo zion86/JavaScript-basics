@@ -1,6 +1,6 @@
-// --------------------------------------------------------------------------
-// .sort() .reverse() сортує числа та букви по зростанню або зменшеню (мутує)
-// --------------------------------------------------------------------------
+// .sort() .reverse()
+// сортує числа та букви по зростанню або зменшеню (мутує)
+
 const unsortedList = ['c', 'a', 'b', 'f', 'e', 'd'];
 const unsortedDigits = [2, 5, 1, 3, 4];
 const votes = [
@@ -41,8 +41,7 @@ const sortVotesTitle = votes.sort((a, b) => (
 // [{title: 'Apple', votes: 1}, {title: 'Milk', votes: 2}, {title: 'Carrot', votes: 3}, {title: 'Banana', votes: 2}]
 
 
+
 // Shuffle array using .sort() method
-// ----------------------------------
 const shuffleArray = [1, 2, 3, 4, 5];
-shuffleArray.sort(() => 0.5 - Math.random());
-// console.log(shuffleArray); // [ 3, 4, 1, 5, 2 ]
+shuffleArray.sort(() => Math.random() - 0.5);   // [ 3, 4, 1, 5, 2 ]
