@@ -2,8 +2,8 @@
 
 // function expression (always LOCAL variable)
 // first create function and then run it
-const fn1 = function () {
+const showDescription = function () {
   console.log(`function expression`);
 };
 
-fn1();
+showDescription();
