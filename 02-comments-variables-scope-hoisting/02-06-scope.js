@@ -10,9 +10,9 @@ let globalLet = 'global let';
 const globalConst = 'global const';
 
 { // global variables visible in local scope
-  console.log('globalVar: ', globalVar);       // globalVar:  global var
-  console.log('globalLet: ', globalLet);       // globalLet:  global let
-  console.log('globalConst: ', globalConst);   // globalConst:  global const
+  globalVar;                                    // 'global var'
+  globalLet;                                    // 'global let'
+  globalConst;                                  // 'global const'
 }
 
 
@@ -22,8 +22,8 @@ const globalConst = 'global const';
   let date = '01.01.1990';                     // '01.01.1990'
 
   // function assignment
-  const localFn = () => {
-    console.log('local function (local variable)');
+  const getLocalFn = () => {
+    return 'local function (local variable)';
   };
 
   // var global variable inside local scope
@@ -31,22 +31,22 @@ const globalConst = 'global const';
 
   // function declaration global variable inside local scope
   function showDate() {
-    console.log(`The date is: '01.01.1990'`);
+    return `The date is: '01.01.1990'`;
   }
 
 
-  // reading varibles
+  // reading varibles inside local scope
   date;                                       // '01.01.1990'
-  localFn();                                  // 'local function (local variable)'
+  getLocalFn();                               // 'local function (local variable)'
   userName;                                   // 'Alex'
   showDate();                                 // 'The date is: '01.01.1990''
 }
 
-// console.log(date);                         // ReferenceError: date is not defined
-// localFn();                                 // ReferenceError: localFn is not defined
+// date;                                      // ReferenceError: date is not defined
+// getLocalFn();                              // ReferenceError: localFn is not defined
 
 // showDate();                                // The date is: '01.01.1990'
-// console.log(userName);                     // 'Alex'
+// userName;                                  // 'Alex'
 
 if (true) {
   // local scope for let, const
@@ -63,4 +63,5 @@ const fn = () => {
   let name = 'Alex';
   const name = 'John';
 };
-// console.log('name: ', name);               // ReferenceError: name is not defined
+
+// name;                                       // ReferenceError: name is not defined

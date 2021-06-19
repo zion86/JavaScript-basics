@@ -13,11 +13,12 @@ function sayHello() {
   var name = 'Pitter';
   console.log(`Hello ${name}`);
 }
-// console.log('name: ', name);            // ReferenceError: name is not defined
+// console.log('name: ', name);                // ReferenceError: name is not defined
 
 
 for (var i = 0; i < 3; i++) {
   console.log(i);
 }
+
 // i from loop has global scope
-console.log('var i from loop: ', i);       // return i = 4
+console.log('var i from loop: ', i);            // return i = 4

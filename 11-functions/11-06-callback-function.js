@@ -10,6 +10,12 @@
     console.log('And this is true');
   }
 
-  // run callback function
-  printName('Oleg', printText);
+
+  // call function with callback
+
+  // v1
+  printName('John', printText);
+
+  // v2
+  printName('Alex', () => console.log(`It's true`));
 }

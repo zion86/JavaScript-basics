@@ -1,7 +1,22 @@
 'use strict';
 
+{
+  function test(counter) {
+    counter--;
+    console.log(`Part 1 - ${counter}`);
+
+    if (counter !== 0) {
+      test(counter);
+    }
+
+    console.log(`Part 2 - ${counter}`);
+  }
+
+  test(3);
+}
+
 { // simple recursion
-  function sum(n) {				// n times
+  function sum(n) {         // n times
     if (n === 0) {
       return n;
     } else {
@@ -157,7 +172,6 @@ fn(company);
 
 
 
-// ---------------------------------------------------------------------
 // pow function
 // ------------
 // const pow = (base, power) => {
