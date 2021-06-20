@@ -1,22 +1,23 @@
 'use strict';
 
-// GLOBAL scope: var, function fName() {} (have hoisting)
-// LOCAL scope: let, const, const localFn = () => {};
+// GLOBAL variables: var, function fName() {} (have hoisting)
+// LOCAL variables: let, const, const localFn = () => {};
 
 
-// global scope for var, let, const
+// GLOBAL SCOPE: var, let, const
 var globalVar = 'global var';
 let globalLet = 'global let';
 const globalConst = 'global const';
 
-{ // global variables visible in local scope
+
+{ // LOCAL SCOPE: global variables is visibles in local scope
   globalVar;                                    // 'global var'
   globalLet;                                    // 'global let'
   globalConst;                                  // 'global const'
 }
 
 
-{ // local scope for let, const
+{ // LOCAL SCOPE: let, const
 
   // let variable
   let date = '01.01.1990';                     // '01.01.1990'
@@ -48,20 +49,23 @@ const globalConst = 'global const';
 // showDate();                                // The date is: '01.01.1990'
 // userName;                                  // 'Alex'
 
+
 if (true) {
-  // local scope for let, const
+  // LOCAL SCOPE for let, const
 }
 
+
 for (let i = 0; i < 3; i++) {
-  // local scope for let, const
+  // LOCAL SCOPE for let, const
 }
 
 
 const fn = () => {
-  // local scope for var, let, const
-  var name = 'Pitter';
-  let name = 'Alex';
-  const name = 'John';
+  // LOCAL SCOPE for var, let, const
+  var nameVar = 'Pitter';
+  let nameLet = 'Alex';
+  const nameConst = 'John';
 };
 
+fn();
 // name;                                       // ReferenceError: name is not defined

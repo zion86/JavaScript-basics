@@ -2,14 +2,14 @@
 
 // variable types: var, let, const keywords
 
-{ // let userName = 'Alex';
 
-  // let        keyword
-  // userName   identificator
-  // =          assigment operator
-  // 'Alex'     literal
-  // ;          end code row
-}
+// let userName = 'Alex';
+// let          keyword
+// userName     identificator
+// =            assigment operator
+// 'Alex'       literal
+// ;            end code row
+
 
 // declaration variable
 let userName;               // undefined

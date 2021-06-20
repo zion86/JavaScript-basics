@@ -1,4 +1,3 @@
-
 // function                             keyword
 // getUser                              function name (identificator)
 // (firstName, lastName)                paramiters (arguments)
@@ -11,6 +10,7 @@ function getUser(firstName, lastName) {
 
 
 // call function
+
 // getUser                              function name (identificator)
 // ('John', 'Doe')                      paramiters (arguments)
 
@@ -18,5 +18,4 @@ getUser('John', 'Doe');
 
 
 // save function result to variable
-
-const name = getUser('John', 'Doe');    // John Doe
+const name = getUser('John', 'Doe');    // 'John Doe'

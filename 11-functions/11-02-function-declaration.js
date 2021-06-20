@@ -17,20 +17,21 @@ const referenceGetUserName = getUserName;
 
 // function declaration
 function getUserName() {
-  // function local scope
+  // function LOCAL SCOPE
   const userName = 'Alex';
 
   // var 'hoistiong'
-  console.log(user);
+  user = 'John';                            // 'John'
+  // var global scope inside function
+  var user;
 
   return userName;                          // 'Alex'
   // by default function return undefined
   // after return code not work and will be ignored
-
-  // var global scope inside function
-  var user = 'John';
 }
 
+// call function
+getUserName();
 // save function result to the variable
 const name = getUserName();                 // 'Alex'
 

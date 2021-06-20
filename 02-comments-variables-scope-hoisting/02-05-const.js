@@ -2,6 +2,8 @@
 
 // const keyword
 
+
+// BORNYEAR;                                    // ReferenceError: Cannot access 'BORNYEAR' before initialization
 const BORNYEAR = 1900;                          // 1900
 // BORNYEAR = 1901;                             // TypeError: Assignment to constant variable.
 
