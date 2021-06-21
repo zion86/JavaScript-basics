@@ -1,24 +1,29 @@
 'use strict';
 
-{ // context environment this
-  function showThis(a = 2, b = 2) {
-    // in default mode this === window
-    // in strict mode this === undefined
-    console.log(this); // undefined
+// context environment 'this'
 
-    // nested function
-    function sum() {
-      // inside nested function in default mode this === window
-      // inside nested function in strict mode this === undefined
-      console.log(this); // undefined
-      return a + b;
-    };
 
-    console.log(sum());
-  }
+// GLOBAL function has 'this' window.showThis
+function showThis(a = 2, b = 2) {
+  // in default mode this === window
+  // in strict mode this === undefined
+  console.log(this);            // undefined
 
-  showThis();
+  // nested function
+  function sum() {
+    // inside nested function in default mode this === window
+    // inside nested function in strict mode this === undefined
+    console.log(this);          // undefined
+
+    return a + b;
+  };
+
+  console.log(sum());
 }
+
+showThis();
+
+
 
 { // this inside Object
   const obj = {
@@ -28,36 +33,22 @@
     // Object method
     sum: function () {
       // inside Object method 'this' reference to this Object
-      console.log(this); // { a: 10, b: 20, sum: [Function: sum] }
+      console.log(this);              // { a: 10, b: 20, sum: [Function: sum] }
+      console.log(this.a + this.b);   // 30
 
-      // // inside nested function in default mode this === window
-      // // inside nested function in strict mode this === undefined
       // function hide() {
-      //   console.log(this); // undefined
+      //   // inside nested function in default mode this === window
+      //   // inside nested function in strict mode this === undefined
+      //   console.log(this);      // undefined
       // };
+
       // hide();
     }
   };
 
-  obj.sum(); // this has reference on self Object from left side obj.method()
+  obj.sum();                    // 'this' has reference on self Object from left side obj.method()
 }
 
-{ // this inside function Constructors and Class === new inheritance Object
-  // function Constructor
-  function User(name, id) {
-    this.name = name;
-    this.id = id;
-    this.human = true;
-    this.greating = function () {
-      console.log(this);
-      console.log(`Hello ${this.name}`);
-    };
-  };
-
-  // this reference to function Constructor of Class
-  const alex = new User('Alex', 33);
-  alex.greating();
-}
 
 { // manual bind this using reference
   const user = {
@@ -73,9 +64,59 @@
   // dynamicly bind Object with function using Object reference
   user.sayName = sayName;
 
-  // call Object binded method
+  // call Object with binded method
   user.sayName('Smit');
 }
+
+
+{ // function fabric and 'this'
+  function createUser(login, email) {
+    return {
+      // ES5 syntax properties
+      // login: login,
+      // email: email,
+
+      // ES5 syntax method
+      // showContactInfo: function () {
+      //   console.log(`My login is: ${this.login}, email is: ${this.email}`);
+      // },
+
+      // ES6 shorthand syntax properties
+      login,
+      email,
+
+      // ES6 shorthand syntax method
+      showContactInfo() {
+        console.log(`My login is: ${this.login}, email is: ${this.email}`);
+      },
+    }
+  }
+
+  const user1 = createUser('admin', 'admin@mail.com');
+  user1.showContactInfo();            // 'My login is: admin, email is: admin@mail.com'
+
+  const user2 = createUser('user', 'user@mail.com');
+  user2.showContactInfo();            // 'My login is: user, email is: user@mail.com'
+}
+
+
+{ // 'this' inside function Constructors and Class === new inheritance Object
+  // function Constructor
+  function User(name, id) {
+    this.name = name;
+    this.id = id;
+    this.human = true;
+    this.greating = function () {
+      console.log(this);
+      console.log(`Hello ${this.name}`);
+    };
+  };
+
+  // 'this' reference to function Constructor of Class
+  const alex = new User('Alex', 33);
+  alex.greating();
+}
+
 
 { // manual bind this .call() .apply() .bind()
   const user = {
@@ -115,6 +156,7 @@
   console.log(double(13)); // 26
 }
 
+
 { // in arrow function not exist this context
   const obj = {
     num: 5,
@@ -131,6 +173,7 @@
 
   obj.sayNumber();
 }
+
 
 { // this in addEventListener
   const button = document.createElement('button');

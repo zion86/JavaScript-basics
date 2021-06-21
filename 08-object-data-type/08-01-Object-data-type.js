@@ -1,21 +1,24 @@
 'use strict';
 
-{ // Object not can convert to String [object, Object]
+// Object not can convert to String [object, Object]
 
-  // v1 create new Object
-  const obj1 = {
-    key: 'value'
+{ // create new Object
+
+  // Object literal
+  const obj1 = {                          // { key: 'value' }
+    key: 'value',
   };
 
-  // v2 create new Object
-  const obj2 = new Object();
+  // Object constructor
+  const obj2 = new Object();              // { }
 }
 
-{ // create Object literal
+
+{ // Object literal
   const options = {
 
     // key: value
-    name: 'text',                         // Object propertie or field
+    name: 'text',                         // Object property or field
     width: 1024,
     colors: {
       bg: 'red',
@@ -23,33 +26,46 @@
       numbers: [1, 2],
     },
 
-    makeTest: function () {               // create ES5 Object method makeTest()
+    makeTest: function () {               // ES5 Object method
       console.log('Test');
     },
 
-    makeTest1() {                         // create ES6 Object method makeTest1()
+    makeTest1() {                         // ES6 Object method
       console.log('Test 1');
     },
   };
 
-  // read values from Object
+  // read Object properties
   options.name;                           // 'text'
   options.colors.bg;                      // 'red'
   options['name'];                        // 'text'
   options['colors']['bg'];                // 'red'
 
-  // add new propertie to the Object
+  // read Object properties dynamically using variable
+  const propName = 'colors';
+  options[propName];                      // { bg: 'red', color: 'black', numbers: [ 1, 2 ] }
+
+  // read non-existent property
+  options.boredr;                         // undefined
+
+  // add new property to the Object
   options.length = 4;
 
-  // modify propertie in the Object
+  // change value in the Object 
   options.width = 320;
 
-  // run Object method
-  options.makeTest();
+  // add new Object method
+  options.showName = function () {
+    console.log(this.name);
+  };
 
-  // delete value from Object
+  // call Object method
+  options.showName();                     // 'text'
+
+  // delete Object property
   delete options.width;
 }
+
 
 { // check if Object include object field [key]: value
   const person = {
@@ -60,6 +76,7 @@
   const personAge = person?.age;           // return undefined, person.age not exist
   const personName = person?.name;         // return 'Alex'
 }
+
 
 { // Object looping
   const a = {};

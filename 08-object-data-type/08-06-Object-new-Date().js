@@ -32,11 +32,13 @@
   console.log('date4: ', date4); // date4:  1969-12-31T23:59:59.999Z
 }
 
+
 {
   // set Date, time
   const setDate = new Date('2020-12-25');
   console.log('setDate: ', setDate.setHours(10));
 }
+
 
 { // create benchmark (timestamp)
   const start = new Date().getTime();

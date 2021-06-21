@@ -17,6 +17,7 @@ const addObj = {
   testPass: 'oox',
 };
 
+
 { // Object shallow copy with Object.assign
   const copyObjAssign = Object.assign({}, mainObj);
   // { a: 2, b: { c: 3 }, testPass: 'xxx', test: 'test field' }
@@ -29,6 +30,7 @@ const addObj = {
   const deepObjCopy = JSON.parse(JSON.stringify(mainObj));
   // { a: 2, b: { c: 3 }, testPass: 'xxx', test: 'test field' }
 }
+
 
 { // merge 2 Objects with Object.assign
   const mergeObjAssign = Object.assign({}, mainObj, addObj);
