@@ -1,9 +1,8 @@
-'use strict';
-
 // variable types: var, let, const keywords
 
 
 // let userName = 'Alex';
+
 // let          keyword
 // userName     identificator
 // =            assigment operator
@@ -14,7 +13,7 @@
 // declaration variable
 let userName;               // undefined
 
-// variable assignment
+// assignment variable
 userName = 'Alex';          // 'Alex'
 
 // reassign variable

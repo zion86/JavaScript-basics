@@ -1,5 +1,3 @@
-'use strict';
-
 // const keyword
 
 
@@ -22,6 +20,7 @@ const BORNYEAR = 1900;                          // 1900
   // read Object proterty
   obj.role;                                     // 'back-end'
 }
+
 
 { // reassign const Array variable because they have reference data type
   const arr = [1, 2, 3, 4];                     // [ 1, 2, 3, 4 ]

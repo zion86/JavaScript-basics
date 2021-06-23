@@ -1,5 +1,3 @@
-'use strict';
-
 // GLOBAL variables: var, function fName() {} (have hoisting)
 // LOCAL variables: let, const, const localFn = () => {};
 

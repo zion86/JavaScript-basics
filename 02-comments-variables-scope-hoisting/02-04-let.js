@@ -1,6 +1,5 @@
-'use strict';
-
 // let keyword
+
 
 // localVariable;                         // ReferenceError: Cannot access 'localVariable' before initialization
 let localVariable;                        // undefined

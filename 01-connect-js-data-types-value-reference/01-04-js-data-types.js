@@ -1,7 +1,4 @@
-'use strict';
-
 //  Primitive data types
-// ---------------------
 
 { // string
   const text = 'string';
@@ -15,7 +12,7 @@
   const numberFloat = 3.33;
   console.log('numberFloat: ', typeof (numberFloat));   // number
 
-  // Infinity
+  // Infinity, -Infinity
   const infinity = 1 / 0;
   console.log('infinity: ', infinity);                  // Infinity
   console.log('infinity: ', typeof (infinity));         // number
@@ -53,7 +50,6 @@
 }
 
 // Object data types
-// -----------------
 
 { // object
   const arr = [];

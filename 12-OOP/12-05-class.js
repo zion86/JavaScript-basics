@@ -1,5 +1,25 @@
 'use strict';
 
+{ // ES6 Class
+  class User {
+    constructor(name, id) {
+      this.name = name;
+      this.id = id;
+      this.human = true;
+    }
+
+    // create class methods
+    greating() {
+      console.log(`Hello ${this.name}`);
+    }
+
+    exit() {
+      console.log(`Bye ${this.name}`);
+    }
+  };
+}
+
+
 { // ES6 Class declaration (superclass)
   class Rectangle {
 
@@ -42,6 +62,7 @@
   longRegtangle.showMyProps();          // text: Long Regtangle, bgColor: green
   longRegtangle.calcArea();             // 1000
 }
+
 
 { // ES6 Class expression
 	const Rectangle = class {
@@ -89,5 +110,4 @@
   Counter.incrementAll = function (arr) {
     arr.forEach((c) => c.increment());
   }
-
 }

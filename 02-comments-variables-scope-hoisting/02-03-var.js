@@ -1,5 +1,3 @@
-'use strict';
-
 // var keyword
 // var is always global variable, only inside function var is local variable.
 

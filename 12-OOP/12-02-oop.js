@@ -1,10 +1,10 @@
 'use strict';
 
-{ // create Prototype Object
+{ // create Prototype Object (parent Object)
   const solder = {
     health: 400,
     armour: 100,
-		
+
     // Prototype method
     sayHello: function () {
       console.log('Say hello');

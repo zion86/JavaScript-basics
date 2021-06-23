@@ -1,6 +1,5 @@
-'use strict';
+// logical operators
 
-// Javascript logicals operators
 
 { // || &&
 

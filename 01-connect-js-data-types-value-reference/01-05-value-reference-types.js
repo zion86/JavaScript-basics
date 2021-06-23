@@ -1,13 +1,12 @@
 // reference type (has reference to parent Object)
-// object
-
+// object: object, array, function
 
 // value type (copy only value from variable)
-// string, number, boolean, null, undefined, bigint
+// primitive: string, number, boolean, null, undefined, bigint
 
 
-//                            stack                     heap
-// primitive                  // value                  // reference
+// assignment variable        STACK (primitive)         HEAP (object)
+// primitive                  value                     reference
 let x = 10;                   // x = 10
 let y = x;                    // y = 10
 
@@ -16,8 +15,8 @@ let obj1 = { name: 'a' };     // obj1 = address 1       // object { name: 'a' }
 let obj2 = obj1;              // obj2 = address 1
 
 
-// update variables           stack                     heap
-// primitive                  // value                  // reference
+// reassign variable          STACK (primitive)         HEAP (object)
+// primitive                  value                     reference
 y = 20;                       // y = 20
 
 // object                     // reference to Object

@@ -17,6 +17,6 @@ const userName = 'Andy';
 
     default:
       console.log('switch: Please enter user name');
-      break;
+    // break;
   }
 }

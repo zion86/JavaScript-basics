@@ -1,27 +1,25 @@
-'use strict';
-
 // var, variable without var or let keyword, function declaration have 'hoisting'
 
 
-// var variable can invoke before creating
+// var variable can call before creating
 // 'hoisting'
 globalVariable;                                   // undefined
 var globalVariable;                               // undefined
 globalVariable = 'assigning data to a variable';  // 'assigning data to a variable'
 
 
-// function declaration can invoke before creating
+// function declaration can call before creating
 // 'hoisting'
 globalFunction();                                 // function exist before declaration
 
 function globalFunction() {
-  // variable without var, let keyword will be GLOBAL VARIABLE
+  // variable without var or let keyword will be GLOBAL VARIABLE
   // 'hoisting'
   userName = 'Alex';
   console.log('I"m global function');
 };
 
-// userName;                                         // 'Alex'
+userName;                                         // 'Alex'
 
 
 function sayHi() {
@@ -37,4 +35,4 @@ function sayHi() {
   console.log(phrase);
 }
 
-sayHi();                                            // 'Hello'
+sayHi();                                          // 'Hello'

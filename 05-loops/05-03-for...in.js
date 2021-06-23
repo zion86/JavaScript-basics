@@ -8,11 +8,10 @@ const developer = {
 };
 
 
-{ // ES6 for in (Object) iterate only keys in Object or index in Array
-  for (const key in developer) {
-    console.log(`Proterty ${key}: value ${developer[key]}`);           // key: value
-    // name: Oleg
-    // rank: Frontend
-    // age: 33
-  }
+// ES6 for in (Object) iterate only keys in Object or index in Array
+for (const key in developer) {
+  console.log(`proterty: ${key}, value ${developer[key]}`);      // key: value
+  // proterty: name, value Alex
+  // proterty: rank, value front-end
+  // proterty: age, value 24
 }

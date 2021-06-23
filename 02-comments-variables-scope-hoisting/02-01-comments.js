@@ -1,10 +1,8 @@
 // single-line comment
 
-
 /*
   multi-line comment
 */
-
 
 /**
  * JSDoc comment

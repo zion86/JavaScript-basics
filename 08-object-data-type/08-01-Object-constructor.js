@@ -1,8 +1,9 @@
 // using Object constructor with new keyword
 
+
 // create new Object using constructor
 const obj = new Object();                               // {}
-// add object property
+// add property
 obj.prop = 'user';                                      // { prop: 'user' }
 console.log('obj: ', obj.constructor);                  // [Function: Object]
 
@@ -20,7 +21,7 @@ console.log('date: ', date.constructor);                // [Function: Date]
 // create new String using constructor
 const str = new String('Hello world');                  // 'Hello world'
 // add custom property to the String constructor
-str.customProp = 123;
+str.customProp = 123;                                   // { customProp: 123 }
 console.log('str: ', str.constructor);                  // [Function: String]
 
 
@@ -36,5 +37,12 @@ const fnCont = function (x, y) {
   this.y = y;
 };
 
-const point = new fnCont(5, 10);
+const point = new fnCont(5, 10);                        // fnCont { x: 5, y: 10 }
 console.log(point.constructor);                         // [Function: fnCont]
+
+
+
+// instanceof operator
+// The instanceof operator tests the presence of constructor.prototype in object's prototype chain.
+obj instanceof Object;                                  // true
+obj instanceof Array;                                   // false

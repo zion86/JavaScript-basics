@@ -1,9 +1,11 @@
 'use strict';
 
-// ES5 function Constructor
+// ES5 function constructor
 
-{ // function Constructor
+{ // function constructor
   function User(name, id) {
+    // constructor
+
     // property
     this.name = name;
     this.id = id;
@@ -11,16 +13,21 @@
     // global argument for all inheritance
     this.human = true;
 
-    // // method
+    // // function method
     // this.greating = function () {
     //   console.log(`Hello ${this.name}`);
     // }
   }
 
-  // create method for function constructor
+  // create method for function constructor prototype
   User.prototype.exit = function () {
     console.log(`Bye ${this.name}`);
   };
+
+  // reassing method .toString() from Object
+  User.prototype.toString = function () {
+    return `User data: ${this.id} ${this.name}`;
+  }
 
   // prototype property for all inheritance
   User.prototype.role = 'front-end';
@@ -58,24 +65,4 @@
   // // inheritance from parent constructor
   // Coder.prototype = Object.create(User.prototype);
   // Coder.prototype.constructor = User;
-}
-
-
-{ // ES6 Class
-  class User {
-    constructor(name, id) {
-      this.name = name;
-      this.id = id;
-      this.human = true;
-    }
-
-    // create class methods
-    greating() {
-      console.log(`Hello ${this.name}`);
-    }
-
-    exit() {
-      console.log(`Bye ${this.name}`);
-    }
-  };
 }
