@@ -17,7 +17,6 @@ Object.keys(options).length;        // 4
 
 // method returns an array of a given object's own enumerable property values
 Object.values(options);             // [ 'text', 1024, { bg: 'red', color: 'black' } ]
-console.log(Object.values(options));
 
 
 // return Array with pairs [ [key, value] ]
