@@ -6,7 +6,10 @@
 // };
 
 // function F(value) {
+//   // constructor
+//   // this = {};
 //   this.value = value;
+//   // return this;
 // }
 
 /* prototype by default reference to F */
@@ -52,3 +55,6 @@ let rabbit2 = new rabbit.constructor("Rab");
 
 // call Parent Object property
 rabbit.eats;  // true
+
+
+

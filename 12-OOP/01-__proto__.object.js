@@ -41,23 +41,23 @@ let longEar = {
   __proto__: rabbit
 };
 
-/*
-	longEar	// instance of rabbit and prototype
-		earLength
-		__proto__
-							rabbit	// instance of prototype
-								jumps
-								walk()	// own method!
-								__proto__
-												animal	// prototype
-													eats
-													walk()	// common method
-													sleep()
-													__proto__
-																	Object
-																	__proto__
-																						null
-*/
+
+longEar // instance of rabbit and prototype
+  earLength
+  __proto__
+          rabbit // instance of prototype
+            jumps
+            walk() // own method!
+            __proto__
+                    animal // prototype
+                      eats
+                      walk() // common method
+                      sleep()
+                      __proto__
+                              Object
+                              __proto__
+                                      null
+
 
 
 // getter, setter inside prototype
