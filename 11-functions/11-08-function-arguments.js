@@ -35,7 +35,6 @@
 
     // v2
     word = word || 'default value';
-
     console.log(word);
   }
 
