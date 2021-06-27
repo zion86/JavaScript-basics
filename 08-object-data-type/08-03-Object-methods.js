@@ -10,6 +10,10 @@ const options = {
 };
 
 
+// 
+Object.assign();
+
+
 // create Array with keys names from Object
 Object.keys(options);               // ['name', 'width', 'colors']
 Object.keys(options).length;        // 4

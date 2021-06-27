@@ -1,24 +1,29 @@
 'use strict';
 
 { // function name, arguments
-  const fn = function funcName() {
-    console.log(fn.name);               // 'funcName'
-    // return Array-like object
-    console.log(arguments);             // ['hello', 'world', 3]
-    console.log(arguments.length);      // ['hello', 'world', 3]
+  function funcName() {
+    // get function name
+    funcName.name;                      // 'funcName'
+    arguments.callee.name;              // 'funcName'
+
+    // arguments is a Array-like object (not iterable)
+    arguments;                          // ['hello', 'world', 3]
+    arguments.length;                   // 3
   };
 
-  fn('hello', 'world', 3);
+  funcName('hello', 'world', 3);
 }
+
 
 { // ...rest operator always go last in list
   const log = (arg1, arg2, ...restArgs) => {
     // ...rest operator return Array with elements
-    console.log(arg1, arg2, restArgs);
+    console.log(arg1, arg2, restArgs);  // 'html', 'css' [ 'react.js', 'vue.js', 'angular.js' ]
   };
 
   log('html', 'css', 'react.js', 'vue.js', 'angular.js');
 }
+
 
 { // ES5
   function printWord(word) {
@@ -36,6 +41,7 @@
 
   printWord();
 }
+
 
 { // ES6 function arguments with default values
   function calcOrDouble(number, basis = 2) {
