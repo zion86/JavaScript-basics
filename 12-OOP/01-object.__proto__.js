@@ -2,7 +2,7 @@
 // __proto__ is getter, setter (read only)
 
 
-// create prototype (superClass)
+// create parent Object (superClass)
 const animal = {
 
   // properties for all inherited objects
@@ -23,7 +23,7 @@ const animal = {
   },
 };
 
-// instance of prototype
+// instance of parent Object
 const rabbit = {
   jumps: true,
   walk () { // own method only for this Obj
@@ -31,7 +31,7 @@ const rabbit = {
   }
 };
 
-// create inheritance from prototype
+// create inheritance from parent Object
 rabbit.__proto__ = animal;
 
 // instance of rabbit
@@ -42,14 +42,14 @@ let longEar = {
 };
 
 
-longEar // instance of rabbit and prototype
+longEar // instance of rabbit and parent Object
   earLength
   __proto__
-          rabbit // instance of prototype
+          rabbit // instance of parent Object
             jumps
             walk() // own method!
             __proto__
-                    animal // prototype
+                    animal // parent Object
                       eats
                       walk() // common method
                       sleep()
@@ -60,7 +60,7 @@ longEar // instance of rabbit and prototype
 
 
 
-// getter, setter inside prototype
+// getter, setter inside parent Object
 let user = { 
   name: "John",
   surname: "Smith",

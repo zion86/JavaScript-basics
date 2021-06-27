@@ -2,8 +2,10 @@
 
 { // function name, arguments
   const fn = function funcName() {
-    console.log(fn.name);       // 'funcName'
-    console.log(fn.arguments);  // ['hello', 'world', 3]
+    console.log(fn.name);               // 'funcName'
+    // return Array-like object
+    console.log(arguments);             // ['hello', 'world', 3]
+    console.log(arguments.length);      // ['hello', 'world', 3]
   };
 
   fn('hello', 'world', 3);
