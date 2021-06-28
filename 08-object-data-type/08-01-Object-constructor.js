@@ -1,9 +1,9 @@
-// using Object constructor with new keyword
+// Object constructor with 'new' keyword
 
 
 // create new Object using constructor
 const obj = new Object();                               // {}
-// add property
+// add object property
 obj.prop = 'user';                                      // { prop: 'user' }
 console.log('obj: ', obj.constructor);                  // [Function: Object]
 

@@ -2,7 +2,7 @@
 
 // Object not can convert to String [object, Object]
 
-{ // create new Object
+{ // create object
 
   // Object literal
   const obj1 = {                          // { key: 'value' }
@@ -11,6 +11,28 @@
 
   // Object constructor
   const obj2 = new Object();              // { }
+}
+
+
+{ //es5, es6 syntax
+  const name = 'Alex';
+  const age = 24;
+  const showInfo = function () {
+    console.log(`${this.name} ${this.age}`);
+  };
+  const dynamicKey = 'some value';
+
+  const alex = {
+    name: name,                           // es5
+    age,                                  // es6 === age: age
+    showInfo,                             // es6
+    [dynamicKey]: 'result',
+    [3 + 5]: 'dynamic expression',
+  };
+
+  alex.showInfo();                        // 'Alex 24'
+  alex[dynamicKey];                       // 'result'
+  alex[3 + 5];                            // 'dynamic expression'
 }
 
 

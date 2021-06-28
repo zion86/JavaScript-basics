@@ -1,29 +1,10 @@
 'use strict';
 
-{ // ES6 Class
-  class User {
-    constructor(name, id) {
-      this.name = name;
-      this.id = id;
-      this.human = true;
-    }
-
-    // create class methods
-    greating() {
-      console.log(`Hello ${this.name}`);
-    }
-
-    exit() {
-      console.log(`Bye ${this.name}`);
-    }
-  };
-}
-
-
-{ // ES6 Class declaration (superclass)
+{ // ES6 Class declaration (superClass)
   class Rectangle {
 
-    // create constructor method, invoke after create new Class (const alex = new User('Alex', 32);)
+    // create constructor method
+    // invoke after create new Class /* const alex = new User('Alex', 32); */
     constructor(height, width) {
       this.height = height;
       this.width = width;
@@ -36,28 +17,29 @@
   };
 
 
-  // extend parent class with new 'subClass'
+  // extend superClass with new subClass
   class ColoredRectangleWithText extends Rectangle {
 
+    // create constructor
     constructor(height, width, text, bgColor) {   // extend arguments
-      super(height, width);                       // inheritance arguments from superclass
-			
+      super(height, width);                       // inheritance arguments from superClass
+
       this.text = text;
       this.bgColor = bgColor;
     }
 
-    // create new class method
+    // create class method
     showMyProps() {
       console.log(`text: ${this.text}, bgColor: ${this.bgColor}`);
     }
 
   };
 
-  // create new Object copy from parent class
+  // create new Object copy from supreClass
   const square = new Rectangle(10, 10);
   square.calcArea();
 
-  // create new Object copy from extended class
+  // create new Object copy from extended subClass
   const longRegtangle = new ColoredRectangleWithText(10, 100, 'Long Regtangle', 'green');
   longRegtangle.showMyProps();          // text: Long Regtangle, bgColor: green
   longRegtangle.calcArea();             // 1000
@@ -65,7 +47,7 @@
 
 
 { // ES6 Class expression
-	const Rectangle = class {
+  const Rectangle = class {
 
     // create constructor function
     constructor(height, width) {
@@ -79,6 +61,7 @@
     }
   };
 }
+
 
 { // experimental
   class Counter {
@@ -105,8 +88,10 @@
     }
   }
 
+  // create static property
   Counter.incrementStep = 2;
 
+  // create static method
   Counter.incrementAll = function (arr) {
     arr.forEach((c) => c.increment());
   }
