@@ -32,7 +32,9 @@ const rabbit = {
 };
 
 // create inheritance from parent Object
-rabbit.__proto__ = animal;
+// v1 depicated 
+// rabbit.__proto__ = animal;
+// v2
 
 // instance of rabbit
 let longEar = {
