@@ -26,7 +26,7 @@ const animal = {
 // instance of parent Object
 const rabbit = {
   jumps: true,
-  walk () { // own method only for this Obj
+  walk() { // own method only for this Obj
     console.log('Rabbit walk');
   }
 };
@@ -44,39 +44,39 @@ let longEar = {
 };
 
 
-longEar // instance of rabbit and parent Object
-  earLength
-  __proto__
-          rabbit // instance of parent Object
-            jumps
-            walk() // own method!
-            __proto__
-                    animal // parent Object
-                      eats
-                      walk() // common method
-                      sleep()
-                      __proto__
-                              Object
-                              __proto__
-                                      null
+// longEar // instance of rabbit and parent Object
+//   earLength
+//   __proto__
+//           rabbit // instance of parent Object
+//             jumps
+//             walk() // own method!
+//             __proto__
+//                     animal // parent Object
+//                       eats
+//                       walk() // common method
+//                       sleep()
+//                       __proto__
+//                               Object
+//                               __proto__
+//                                       null
 
 
 
 // getter, setter inside parent Object
-let user = { 
+let user = {
   name: "John",
   surname: "Smith",
   set fullName(val) {
     [this.name, this.surname] = val.split(" ");
   },
   get fullName() {
-    return `${this.name} ${this.surname}`; 
+    return `${this.name} ${this.surname}`;
   },
 };
 
-let admin = { 
+let admin = {
   __proto__: user,
-  isAdmin: true, 
+  isAdmin: true,
 };
 
 admin.fullName;     // John Smith // getter
@@ -91,12 +91,12 @@ Object.keys(object);
 Object.values(object);
 
 // for..in loops over both own & inherited keys
-for(let prop in rabbit) {
+for (let prop in rabbit) {
   console.log(prop);
 }
 
 // combine for..in & Object.hasOwnProperty();
-for(let prop in rabbit) {
+for (let prop in rabbit) {
   let isOwn = rabbit.hasOwnProperty(prop);
   if (isOwn) {
     console.log(`Our: ${prop}`);

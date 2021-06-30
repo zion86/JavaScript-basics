@@ -60,7 +60,4 @@ rabbit.constructor == Rabbit;   // true
 let rabbit2 = new rabbit.constructor("Rab");
 
 // call Parent Object property
-rabbit.eats;  // true
-
-
-
+rabbit.eats;                    // true
