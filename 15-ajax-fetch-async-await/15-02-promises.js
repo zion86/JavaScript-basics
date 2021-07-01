@@ -1,9 +1,14 @@
 'use strict';
 
+// promise states:
+// 1 - pending
+// 2 - fulfilled
+// 3 - reject
+
 {
   console.log('Request data...');
 
-  // create new Promice(resolve = ok, reject = error)
+  // create new Promice (resolve = ok, reject = error)
   const req = new Promise((resolve, reject) => {
     setTimeout(() => {
       console.log('Preparing data...');
@@ -19,7 +24,7 @@
     }, 2000);
   });
 
-  // use resolve function from req Promice
+  // use resolve function from req Promise
   req
     .then(product => {
       return new Promise((resolve, reject) => {
@@ -47,7 +52,7 @@
 
 
 {
-  const test = time => {
+  const test = (time) => {
     return new Promise(resolve => {
       setTimeout(() => resolve(), time);
     });
