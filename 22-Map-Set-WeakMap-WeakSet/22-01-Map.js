@@ -9,6 +9,7 @@ const obj = { name: 'John' };
 // new Map() create new collection
 const mapCollection = new Map();            // Map(0)
 const mapColl = new Map([
+  // [key, value]                           // entrie
   ['age', 25],
   [obj, { name: 'Alex' }],
   [false, 'toggle is off'],
@@ -47,7 +48,7 @@ mapCollection.has('Name');                  // false
 
 // iterate collection: Object.keys() Object.values() Object.entries() for...of .forEach()
 for (const key of mapCollection.keys()) {
-  key;
+  console.log(key);
   // 'name'
   // true
   // () => console.log('function')
@@ -55,15 +56,15 @@ for (const key of mapCollection.keys()) {
 }
 
 for (const value of mapCollection.values()) {
-  value;
+  console.log(value);
   // 'Alex'
   // 'boolean value'
   // 'My function'
   // ["array", "object", "number"]
 }
 
-for (const entrie of mapCollection.entries()) {
-  entrie;
+for (const [key, value] of mapCollection.entries()) {
+  console.log([key, value]);
   // ["name", "Alex"]
   // [true, "boolean value"]
   // [ƒ, "My function"]
@@ -71,7 +72,7 @@ for (const entrie of mapCollection.entries()) {
 }
 
 mapCollection.forEach((value, key, map) => {
-  `${value} ${key} ${map}`;
+  console.log(`${value} ${key} ${map}`);
 });
 
 
