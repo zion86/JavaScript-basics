@@ -2,7 +2,7 @@
 // object: object, array, function
 
 // value type (copy only value from variable)
-// primitive: string, number, boolean, null, undefined, bigint
+// primitive: string, number, boolean, null, undefined, bigint, symbol
 
 
 // assignment variable        STACK (primitive)         HEAP (object)
