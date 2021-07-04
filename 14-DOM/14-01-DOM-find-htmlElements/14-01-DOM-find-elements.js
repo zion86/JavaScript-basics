@@ -1,30 +1,5 @@
 'use strict';
 
-{ // old approach
-
-  // find HTML element in Page by ID
-  const findByID = document.getElementById('title');
-
-  // return HTMLCollection Pseudo Array (collection) of elements <tag> name
-  const findByTag = document.getElementsByTagName('h1');
-
-  // return first HTML element from pseudo Array
-  const findByTagFirstElem = document.getElementsByTagName('h1')[0];
-
-  // return HTMLCollection Pseudo Array (collection) of elements by Class name
-  const findByClassName = document.getElementsByClassName('list__item');
-
-  // find first HTML element from pseudo Array
-  const findByClassNameFirstElem = document.getElementsByClassName('list__item')[1];
-
-  // return HTMLCollection Pseudo Array (collection) of elements by name attribute
-  const findByAttributeName = document.getElementsByName('input-name');
-  // <input type="text" name="input-name">
-}
-
-
-// new approach
-
 // find HTML element in Page by ID
 const findByID = document.getElementById('title');
 
@@ -65,4 +40,27 @@ const findAllClassElems = document.querySelectorAll('.list__item');
       console.log(elem.textContent, 'not include necessary css class');
     }
   });
+}
+
+
+{ // old approach
+
+  // find HTML element in Page by ID
+  const findByID = document.getElementById('title');
+
+  // return HTMLCollection Pseudo Array (collection) of elements <tag> name
+  const findByTag = document.getElementsByTagName('h1');
+
+  // return first HTML element from pseudo Array
+  const findByTagFirstElem = document.getElementsByTagName('h1')[0];
+
+  // return HTMLCollection Pseudo Array (collection) of elements by Class name
+  const findByClassName = document.getElementsByClassName('list__item');
+
+  // find first HTML element from pseudo Array
+  const findByClassNameFirstElem = document.getElementsByClassName('list__item')[1];
+
+  // return HTMLCollection Pseudo Array (collection) of elements by attribute name
+  const findByAttributeName = document.getElementsByName('input-name');
+  // <input type="text" name="input-name">
 }
