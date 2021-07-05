@@ -1,5 +1,13 @@
 'use strict';
 
+/*
+  <p><i>Hello</i> world</p>
+
+  // outerHTML = <p><i>Hello</i> world</p>
+  // innerHTML = <i>Hello</i> world
+  // textContent = Hello world
+*/
+
 const innerHtml = document.querySelector('.innerHtml');
 const outerHtml = document.querySelector('.outerHtml');
 

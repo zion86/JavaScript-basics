@@ -25,6 +25,7 @@
   }
 }
 
+
 { // v2
   // create new HTMLElement in page
   const ol = document.querySelector('ol');
@@ -53,6 +54,7 @@
   firstLiElem.remove();
   lastLiElem.remove();
 }
+
 
 { // move <nav> to another place
   const nav = document.querySelector('nav');

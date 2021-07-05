@@ -6,13 +6,13 @@
   // array Constructor
   const constructorArray = new Array();                         // []
 
-	// array length
+  // array length
   const arrayLength = arrayLiteral.length;                      // 4
-	
-	// get first array element
+
+  // get first array element
   const firstArrayElem = arrayLiteral[0];                       // 'ua'
-	
-	// get last array element
+
+  // get last array element
   const lastArrayElem = arrayLiteral[arrayLiteral.length - 1];  // 'gr'
 
   // change array length (delete rest array elements)

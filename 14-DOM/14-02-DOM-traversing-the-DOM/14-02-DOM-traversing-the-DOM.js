@@ -10,7 +10,7 @@ const bodyElem = document.body;             // <body> element
 
 const li = document.querySelector('.list__item--active');
 
-{ // ELEMENT nodeType
+{ // ELEMENT NODE nodeType
 
   // element.children
   // returns a live HTMLCollection which contains all of the child elements of the element
@@ -49,7 +49,7 @@ const li = document.querySelector('.list__item--active');
 }
 
 
-{ // NODE nodeType
+{ // ALL TYPE NODES nodeType
 
   // element.childNodes
   // return all child NodeList inside parent element
