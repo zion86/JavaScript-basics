@@ -9,6 +9,7 @@
   innerTextAfter.innerText = innerTextContent;
 }
 
+
 { // outerText delete parentNode and return only text inside HTML
   const outerText = document.querySelector('.outerHtml');
   const outerTextAfter = outerText.querySelector('.after');
@@ -17,6 +18,7 @@
   outerTextContent = '<h1>outerText: <span style="color: yellow;">word</span></h1>';
   outerTextAfter.outerText = outerTextContent;
 }
+
 
 { // textContent return only text inside HTML
   const textContent = document.querySelector('.textContent');

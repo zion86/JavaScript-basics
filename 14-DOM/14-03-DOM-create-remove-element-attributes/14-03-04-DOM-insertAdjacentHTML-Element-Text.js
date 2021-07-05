@@ -18,6 +18,7 @@ const ulElem = document.querySelector('ul');
   ulElem.insertAdjacentHTML('beforeend', '<li>last li inside ul element</li>');
 }
 
+
 { // insert HTMLElement inside HTML
   const li = document.createElement('li');
   li.textContent = 'li element'
