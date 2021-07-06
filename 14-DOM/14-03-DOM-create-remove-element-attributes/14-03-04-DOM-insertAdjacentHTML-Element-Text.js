@@ -10,7 +10,6 @@ const ulElem = document.querySelector('ul');
   // outside current element at the bottom
   ulElem.insertAdjacentHTML('afterend', '<p>after begin ul element</p>');
 
-
   // inside current element at the top
   ulElem.insertAdjacentHTML('afterbegin', '<li>first li inside ul element</li>');
 
@@ -28,6 +27,7 @@ const ulElem = document.querySelector('ul');
   ulElem.insertAdjacentElement('afterbegin', li);   // inside current element at the top
   ulElem.insertAdjacentElement('beforeend', li);    // inside current element at the bottom
 }
+
 
 { // insert text string inside HTML
 

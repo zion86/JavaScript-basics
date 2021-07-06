@@ -1,7 +1,7 @@
 'use strict';
 
 /*
-  <p><i>Hello</i> world</p>
+  // <p><i>Hello</i> world</p>
 
   // outerHTML = <p><i>Hello</i> world</p>
   // innerHTML = <i>Hello</i> world

@@ -7,8 +7,9 @@
   // insert HTMLElemend in to the end of body tag
   document.body.append(ul);
 
-  // create text Node
+  // create textNode
   const textNode = document.createTextNode('add text to page');
+
   // add textNode on the body
   document.body.prepend(textNode);
 
@@ -20,7 +21,7 @@
     // add text to existing elem
     li.textContent = i;
 
-    // add children to parent
+    // add child to parent
     ul.append(li);
   }
 }
@@ -50,7 +51,7 @@
   pAfterOl.textContent = 'add <p> after <ol>';
   ol.after(pAfterOl);
 
-  // delete HTMLElement
+  // remove HTMLElement
   firstLiElem.remove();
   lastLiElem.remove();
 }
@@ -72,6 +73,7 @@
   }
 
   { // create HTMLElement deep copy
+    // HTMLElement.cloneNode(false/true)
     const navCopy = nav.cloneNode(true);
 
     // add HTMLElement copy to the document
