@@ -3,9 +3,9 @@
 
 
 // global variable
-var userName = 'Alex';                         // 'Alex'
-var userName = 'John';                         // 'John'
-userName = 'Katty';                            // 'Katty'
+var userName = 'Alex';                      // 'Alex'
+var userName = 'John';                      // 'John'
+userName = 'Katty';                         // 'Katty'
 
 
 // only inside functions var is local variable
