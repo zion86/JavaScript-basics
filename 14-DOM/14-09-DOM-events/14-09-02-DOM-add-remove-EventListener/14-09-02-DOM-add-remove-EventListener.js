@@ -7,7 +7,6 @@ document.body.append(btn);
 
   const onClick = (event) => {
     // element where event takes place
-    // елемент в якому відбувається подія
     // Event bubbling - first handle inside nested element and then move up to parent element
     const target = event.target;
     const currentTarget = event.currentTarget;
@@ -31,6 +30,7 @@ document.body.append(btn);
   btn.addEventListener('click', onClick);
 }
 
+
 {
   const link = document.createElement('a');
   // add HTML attibute
@@ -40,7 +40,7 @@ document.body.append(btn);
 
   const a = document.querySelector('a');
   const onClick = (event) => {
-    // cancel default browser behavior (open a[href])
+    // cancel default browser behavior (open link a[href])
     event.preventDefault();
 
     console.dir(event.target.getAttribute('href'));
@@ -50,20 +50,21 @@ document.body.append(btn);
   a.addEventListener('click', onClick, { once: true });
 }
 
+
 // {
 //   // create js event
 //   const createEvent = ({ target } = event) => {
-//     	// const target = event.target;
+//      // const target = event.target;
 
-//     	// check if parent html element contain this css-class-name - go up
-//     	target.closest('.css-class-name');
+//      // check if parent html element contain this css-class-name - go up
+//      target.closest('.css-class-name');
 
-//		 	// check if childern html element contain this css-class-name go down
-//     	target.contains('.css-class-name');
+//      // check if childern html element contain this css-class-name go down
+//      target.contains('.css-class-name');
 
-//		 	// if include current css-name
-//			target.matches('.css-class-name');
-			 
+//      // if include current css-name
+//      target.matches('.css-class-name');
+
 //   };
 
 //   // add event listener
