@@ -1,72 +1,30 @@
-const btn = document.createElement('button');
-btn.textContent = 'Button';
-document.body.append(btn);
-
-{
-  let i = 0;
-
-  const onClick = (event) => {
-    // element where event takes place
-    // Event bubbling - first handle inside nested element and then move up to parent element
-    const target = event.target;
-    const currentTarget = event.currentTarget;
-    console.log('target: ', target);
-    console.log('currentTarget: ', currentTarget);
-
-    i++;
-    target.textContent = i;
-
-    if (i === 3) {
-      btn.textContent = 'Button';
-
-      // remove Event Listener
-      btn.removeEventListener('click', onClick);
-    }
-  };
-
-  // add Event Listener to HTML element
-  // listener: 'click', 'keypress'
-  // event: 'MouseEvent', 'KeyboardEvent'
-  btn.addEventListener('click', onClick);
-}
+const btn = document.querySelector('.btn');
+const btn1 = document.querySelector('.btn1');
+const btnCounter = document.querySelector('.btn__counter');
 
 
-{
-  const link = document.createElement('a');
-  // add HTML attibute
-  link.setAttribute('href', 'http://youtube.com');
-  link.textContent = 'Website';
-  document.body.append(link);
+// handler function
+const handleCountFunc = () => {
+  let counter = btnCounter.textContent;
+  btnCounter.textContent = ++counter;
 
-  const a = document.querySelector('a');
-  const onClick = (event) => {
-    // cancel default browser behavior (open link a[href])
-    event.preventDefault();
+  if (counter === 5) {
+    btn.disabled = true;
+    btn.textContent = 'addEventListener was removed';
 
-    console.dir(event.target.getAttribute('href'));
+    // remove eventListener
+    btn.removeEventListener('click', handleCountFunc);
   }
-
-  // 3rd param - alternative removeEventListener
-  a.addEventListener('click', onClick, { once: true });
-}
+};
 
 
-// {
-//   // create js event
-//   const createEvent = ({ target } = event) => {
-//      // const target = event.target;
+// create new eventListener();
+// element.addEventListener('event_name', handlerFunc, useCapture);
+btn.addEventListener('click', handleCountFunc);
 
-//      // check if parent html element contain this css-class-name - go up
-//      target.closest('.css-class-name');
-
-//      // check if childern html element contain this css-class-name go down
-//      target.contains('.css-class-name');
-
-//      // if include current css-name
-//      target.matches('.css-class-name');
-
-//   };
-
-//   // add event listener
-//   htmlElement.addEventListener('click', createEvent);
-// }
+// 3rd paramiter (called only once) - alternative removeEventListener();
+// element.addEventListener('event_name', handlerFunc, { once: true });
+btn1.addEventListener('click', () => {
+  btn1.textContent = 'End';
+  btn1.disabled = true;
+}, { once: true });
