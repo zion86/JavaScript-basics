@@ -8,12 +8,19 @@
   <title>Mouse events</title>
 
   <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      width: 100%;
+    }
+
     .mouse {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 200px;
-      height: 200px;
+      padding: 10px;
+      width: 250px;
+      height: 250px;
       color: floralwhite;
       background-color: darkslategrey;
     }
@@ -23,7 +30,13 @@
 <body>
 
   <div class="mouse">
-    <span class="mouse__event"></span>
+    <p>Mouse move events: <br />
+      event type: <span class="mouse__move"></span>
+    </p>
+    <br />
+    <p>Mouse click events: <br />
+      click event: <span class="mouse__click"></span>
+    </p>
   </div>
 
   <script src="14-09-06-DOM-mouse-events.js"></script>
