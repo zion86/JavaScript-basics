@@ -1,12 +1,8 @@
-//   const onClick = (event) => {
-//     // element where event takes place
-//     // Event bubbling - first handle inside nested element and then move up to parent element
-//     const target = event.target;
-//     const currentTarget = event.currentTarget;
-//     console.log('target: ', target);
-//     console.log('currentTarget: ', currentTarget);
-//   };
+// prevent default browser behavior
+// event.preventDefault();
 
+// element where event takes place
+// Event bubbling - first handle inside nested element and then move up to parent element
 
 // {
 //   const link = document.createElement('a');
