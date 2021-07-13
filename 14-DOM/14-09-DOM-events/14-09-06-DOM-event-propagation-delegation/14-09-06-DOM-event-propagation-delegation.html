@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event propagation, delegation</title>
+
+  <style>
+    div {
+      margin: 5px;
+      padding: 5px;
+      border: 1px solid green;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h3>HTML-attribute onclick=""</h3>
+
+  <!-- parent element with multiple nested event handlers -->
+  <div onclick="alert('div 1')">
+    div 1
+    <!-- HTML-attribute onclick="" has bubbling propagation -->
+    <div onclick="alert('div 2')">
+      div 2
+      <!--
+        first event happens on an element where was fired the handler on it,
+        and then go up and runs each nested event until to the parent element
+      -->
+      <div onclick="alert('div 3')">
+        div 3
+      </div>
+    </div>
+  </div>
+
+  <h3>addEventListener()</h3>
+
+  <div class="div" id="div1">
+    div 1
+    <div class="div" id="div2">
+      div 2
+      <div class="div" id="div3">
+        div 3
+      </div>
+    </div>
+  </div>
+
+  <h3>this vs event.target</h3>
+
+  <div class="target" id="div1">
+    div 1
+    <div class="target" id="div2">
+      div 2
+      <div class="target" id="div3">
+        div 3
+      </div>
+    </div>
+  </div>
+
+  <h3>event.preventDefault()</h3>
+
+  <form id="testForm">
+    login <input type="text"> <br />
+    <input type="reset">
+  </form>
+
+  <script src="14-09-06-DOM-event-propagation-delegation.js"></script>
+
+</body>
+
+</html>

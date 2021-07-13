@@ -1,7 +1,7 @@
-{ // v1 using html attribute event
+{ // v1 HTML-attribute event
   const btn1 = document.querySelector('.btn1');
 
-  //                      html event attribute
+  //                      HTML-attribute event
   // <button class="btn1" onclick="handleBtn1()">Button 1</button>
 
   // handler function
@@ -11,7 +11,7 @@
 }
 
 
-{ // v2 using property element.onclick = handlerFunc; event can has only one handler function
+{ // v2 DOM property element.onclick = handlerFunc; event can has only one handler function
   const btn2 = document.querySelector('.btn2');
 
   // <button class="btn2">Button 2</button>
@@ -29,7 +29,7 @@
 }
 
 
-{ // v3 using element.addEventListener('event name', handlerFunc);
+{ // v3 addEventListener element.addEventListener('event name', handlerFunc);
   const btn3 = document.querySelector('.btn3');
 
   // <button class="btn3">Button 3</button>

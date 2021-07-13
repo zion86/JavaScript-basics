@@ -1,9 +1,3 @@
-// prevent default browser behavior
-// event.preventDefault();
-
-// element where event takes place
-// Event bubbling - first handle inside nested element and then move up to parent element
-
 // {
 //   const link = document.createElement('a');
 //   // add HTML attibute
