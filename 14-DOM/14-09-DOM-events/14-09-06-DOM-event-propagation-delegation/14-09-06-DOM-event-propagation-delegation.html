@@ -36,8 +36,7 @@
     </div>
   </div>
 
-  <h3>addEventListener()</h3>
-
+  <!-- addEventListener() -->
   <div class="div" id="div1">
     div 1
     <div class="div" id="div2">
@@ -48,8 +47,7 @@
     </div>
   </div>
 
-  <h3>this vs event.target</h3>
-
+  <!-- event.target vs this -->
   <div class="target" id="div1">
     div 1
     <div class="target" id="div2">
@@ -60,12 +58,21 @@
     </div>
   </div>
 
-  <h3>event.preventDefault()</h3>
-
+  <!-- event.preventDefault() -->
+  <!-- event.stopPropagation() -->
   <form id="testForm">
     login <input type="text"> <br />
     <input type="reset">
   </form>
+
+  <!-- event delegation -->
+  <!-- one eventListener and handler for all nested elements -->
+  <!-- parent element intercepte bubble event (event.target) -->
+  <ul class="menu">
+    <li>Home</li>
+    <li>Contacts</li>
+    <li>About</li>
+  </ul>
 
   <script src="14-09-06-DOM-event-propagation-delegation.js"></script>
 

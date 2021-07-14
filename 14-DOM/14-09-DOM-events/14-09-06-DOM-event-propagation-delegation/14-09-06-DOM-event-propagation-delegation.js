@@ -1,5 +1,13 @@
 /* event propagation order */
 
+/*
+    capturing           bubbling
+     go down             go up
+      div1                div1
+      div2                div2
+      div3 => e.target => div3
+*/
+
 // 1 capturing phase            the event goes down to the element      div1 > div2 > div3
 // element.addEventListener('click', handler, true);
 // element.addEventListener('click', handler, { capture: true });
@@ -20,7 +28,7 @@
 // event.stopPropagation()      can stop the event propagation
 
 
-{ // first capture phase then goes bubble phase
+{ // first capture phase, then goes bubble phase
   const div = document.querySelectorAll('.div');
 
   function handlerBubble() {
@@ -38,7 +46,7 @@
 }
 
 
-{ // this vs event.target
+{ // event.target vs this
   const target = document.querySelectorAll('.target');
 
   function handlerTarget(event) {
@@ -74,4 +82,16 @@
         event.stopPropagation();    // stop the event propagation
       }
     });
+}
+
+
+{ // event delegation
+  const parentElem = document.querySelector('ul');
+
+  const hanlerMenuItem = (event) => {
+    const menuItem = event.target;
+    console.log(menuItem.textContent);
+  };
+
+  parentElem.addEventListener('click', hanlerMenuItem);
 }
