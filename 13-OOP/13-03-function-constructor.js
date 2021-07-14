@@ -1,10 +1,13 @@
 'use strict';
 
-// ES5 function constructor
-function User(name, id) {
-  // constructor
+// ES5 function-constructor
 
-  // property
+// function PascalCasing naming
+function User(name, id) {
+  // function constructor initialization
+  // this = {}
+
+  // this.property = function argument
   this.name = name;
   this.id = id;
 
@@ -15,9 +18,11 @@ function User(name, id) {
   // this.greating = function () {
   //   console.log(`Hello ${this.name}`);
   // }
+
+  // return this;
 }
 
-// create method for function constructor prototype
+// create method for function-constructor using prototype
 User.prototype.exit = function () {
   console.log(`Bye ${this.name}`);
 };
@@ -39,6 +44,7 @@ User.prototype.role = 'front-end';
 // };
 
 
+// operator 'new' create empty Object {}
 // create new Object inheritance from function Constructor
 const john = new User('John', 31);  // User { name: 'John', id: 31, human: true }
 const alex = new User('Alex', 33);  // User { name: 'Alex', id: 33, human: true }
