@@ -18,9 +18,12 @@
 // // F.prototype = { constructor: F }
 // // console.log(F.prototype.constructor == F); // true
 
-/* add property to the F.prototype, not overwrite */
+/* 
+  add property to the F.prototype, not overwrite
+  the default F.prototype.constructor is preserved
+*/
 // F.prototype.prop = 'value';
-/* or */
+/* or recreate the constructor property manually */
 // F.prototype = {
 //   prop: 'value',
 //   constructor: F,
