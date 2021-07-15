@@ -16,7 +16,7 @@
 
 /* prototype by default reference to F */
 // // F.prototype = { constructor: F }
-// // F.prototype.constructor == F   // true
+// // console.log(F.prototype.constructor == F); // true
 
 /* add property to F.prototype not rewrite */
 // F.prototype.prop = 'value';
