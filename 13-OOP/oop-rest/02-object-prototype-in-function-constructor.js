@@ -7,18 +7,18 @@
 
 // function F(value) {
 //   // constructor
-//   /* this = {}; */
+//   /* this = {}; // (implicitly) */
 
 //   this.value = value;
 
-//   /* return this; */
+//   /* return this; // (implicitly) */
 // }
 
 /* prototype by default reference to F */
 // // F.prototype = { constructor: F }
 // // console.log(F.prototype.constructor == F); // true
 
-/* add property to F.prototype not rewrite */
+/* add property to the F.prototype, not overwrite */
 // F.prototype.prop = 'value';
 /* or */
 // F.prototype = {
