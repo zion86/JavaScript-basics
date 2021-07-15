@@ -6,7 +6,7 @@
 // };
 
 // function F(value) {
-//   /* constructor */
+//   // constructor
 //   /* this = {}; */
 
 //   this.value = value;
