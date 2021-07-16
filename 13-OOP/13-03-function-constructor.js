@@ -3,33 +3,33 @@
 // ES5 function-constructor
 
 // function PascalCasing naming
-function User(name, id) {
+function User(name, age) {
   // function constructor initialization
-  // this = {}
+  /* this = {}; // (implicitly) */
 
-  // this.property = function argument
+  /* this.property = function argument */
   this.name = name;
-  this.id = id;
+  this.age = age;
 
   // global argument for all inheritance
-  this.human = true;
+  this.isAdmin = false;
 
-  // // function method
-  // this.greating = function () {
-  //   console.log(`Hello ${this.name}`);
-  // }
+  // // function-constructor method
+  // this.getUserInfo = function () {
+  //   console.log(`My name is ${this.name}, i'm ${this.age} yeasr old.`);
+  // };
 
-  // return this;
+  /* return this; // (implicitly) */
 }
 
-// create method for function-constructor using prototype
-User.prototype.exit = function () {
-  console.log(`Bye ${this.name}`);
-};
+// create function-constructor method using prototype
+User.prototype.getUserInfo = function () {
+  return `My name is ${this.name}, i'm ${this.age} yeasr old.`;
+}
 
 // reassing method .toString() from Object
 User.prototype.toString = function () {
-  return `User data: ${this.id} ${this.name}`;
+  return `User data: ${this.name} ${this.age}`;
 }
 
 // prototype property for all inheritance
@@ -46,15 +46,16 @@ User.prototype.role = 'front-end';
 
 // operator 'new' create empty Object {}
 // create new Object inheritance from function Constructor
-const john = new User('John', 31);  // User { name: 'John', id: 31, human: true }
-const alex = new User('Alex', 33);  // User { name: 'Alex', id: 33, human: true }
+const john = new User('John', 31);  // User { name: "John", age: 31, isAdmin: false }
+const alex = new User('Alex', 33);  // User { name: "Alex", age: 33, isAdmin: false }
 
 // change property in Object inheritance
 john.role = 'back-end';             // 'back-end'
+alex.role;                          // 'front-end'
 
-// call method
-// john.greating();                 // 'Hello John'
-john.exit();                        // 'Bye John'
+// call methods
+john.getUserInfo();                 // 'My name is John, i'm 31 yeasr old.'
+john.toString();                    // 'User data: John 31'
 
 
 
