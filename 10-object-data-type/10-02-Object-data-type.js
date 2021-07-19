@@ -2,15 +2,18 @@
 
 // Object not can convert to String [object, Object]
 
-{ // create object
+{ // create new object
 
   // Object literal
-  const obj1 = {                          // { key: 'value' }
+  const obj1 = {                                  // { key: 'value' }
     key: 'value',
   };
 
   // Object constructor
-  const obj2 = new Object();              // { }
+  const obj2 = new Object();                      // { }
+
+  // Object.create(proto, properties) static method
+  const obj3 = Object.create(Object.prototype);   // { }
 }
 
 
