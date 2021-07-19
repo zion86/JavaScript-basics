@@ -14,6 +14,9 @@ function User(name, age) {
   // global argument for all inheritance
   this.isAdmin = false;
 
+  // static property
+  User.id++;
+
   // // function-constructor method
   // this.getUserInfo = function () {
   //   console.log(`My name is ${this.name}, i'm ${this.age} yeasr old.`);
@@ -35,13 +38,13 @@ User.prototype.toString = function () {
 // prototype property for all inheritance
 User.prototype.role = 'front-end';
 
-// // function constructor static property
-// User.human = 'Yes';
+// function-constructor static property
+User.id = 0;
 
-// // function constructor static mathod
-// User.getName = function () {
-//   return User;
-// };
+// function-constructor static method
+User.currentUserId = function () {
+  return `Current ID: ${this.id}`;
+};
 
 
 // operator 'new' create empty Object {}
@@ -57,16 +60,21 @@ alex.role;                          // 'front-end'
 john.getUserInfo();                 // 'My name is John, i'm 31 yeasr old.'
 john.toString();                    // 'User data: John 31'
 
+// call static method
+User.currentUserId();               // 2
 
 
-// create function Constructor with inheritance
-function Coder(param) {
-  // inheritance from User Constructor
-  User.apply(this, arguments);
 
-  this.side = param.side;
-};
+/*
+  // create function Constructor with inheritance
+  function Coder(param) {
+    // inheritance from User Constructor
+    User.apply(this, arguments);
 
-// inheritance from parent constructor
-Coder.prototype = Object.create(User.prototype);
-Coder.prototype.constructor = User;
+    this.side = param.side;
+  };
+
+  // inheritance from parent constructor
+  Coder.prototype = Object.create(User.prototype);
+  Coder.prototype.constructor = User;
+*/
