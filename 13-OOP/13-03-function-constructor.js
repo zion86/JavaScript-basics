@@ -90,7 +90,7 @@ User.currentUserId = function () {
 const john = new User('John', 31);  // User { name: "John", age: 31, isAdmin: false }
 const alex = new User('Alex', 33);  // User { name: "Alex", age: 33, isAdmin: false }
 
-// change or read property in Object inheritance
+// change or read property in Object inheritance, NOT in the prototype
 john.role = 'back-end';             // 'back-end'
 john.isAdmin = true;                // true
 alex.role;                          // 'front-end'
@@ -116,16 +116,38 @@ alex.constructor;                   // reference to the function constructor Use
 //              null
 
 
-/*
-  // create function Constructor with inheritance
-  function Coder(param) {
-    // inheritance from User Constructor
-    User.apply(this, arguments);
+// function constructor inheritance
+// --------------------------------
 
-    this.side = param.side;
-  };
+// create new function constructor
+function Frontend(name, age, developer) {
+  // inheritance from User Constructor
+  // User.apply(this, arguments);
+  User.call(this, name, age);
 
-  // inheritance from parent constructor
-  Coder.prototype = Object.create(User.prototype);
-  Coder.prototype.constructor = User;
-*/
+  this.developer = developer;
+};
+
+Frontend.prototype.framework = 'React.js';
+
+
+// v1 - create new-based inheritance
+// Frontend.prototype = new User();
+// Frontend.prototype.constructor = Frontend;
+
+// v2 - Object.create()
+// Frontend.prototype = Object.create(User.prototype);
+// Frontend.prototype.constructor = Frontend;
+
+// v3 - manual __proto__ assigment
+// Frontend.prototype.__proto__ = User.prototype;
+
+// v4 - Object.setPrototypeOf(inheritanceProto, parentProto);
+Object.setPrototypeOf(Frontend.prototype, User.prototype);
+
+const eva = new Frontend('Eva', 5, 'frontend');
+eva.framework;                      // 'React.js'
+
+// read prototype property, method from User function constructor
+eva.role;                           // 'front-end'
+eva.getUserInfo();                  // 'My name is Eva, i'm 5 yeasr old.'
