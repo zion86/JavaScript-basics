@@ -7,12 +7,21 @@ function User(name, age) {
   // function constructor initialization
   /* this = {}; // (implicitly) */
 
+  // function constructor private property for all inheritances
+  let _isAdmin = false;
+
+  // function constructor private methods
+  this.getIsAdmin = function () {
+    return `${this.name} has admin permission: ${_isAdmin}`;
+  };
+
+  this.setIsAdmin = function () {
+    return _isAdmin = !_isAdmin;
+  };
+
   /* this.property = function argument */
   this.name = name;
   this.age = age;
-
-  // function constructor property for all inheritances
-  this.isAdmin = false;
 
   // function constructor static property
   User.id++;
@@ -62,12 +71,12 @@ function User(name, age) {
 // create function constructor method using prototype
 User.prototype.getUserInfo = function () {
   return `My name is ${this.name}, i'm ${this.age} yeasr old.`;
-}
+};
 
 // reassing method .toString() from Object.prototype
 User.prototype.toString = function () {
   return `User data: ${this.name} ${this.age}`;
-}
+};
 
 // function constructor prototype property for all inheritance
 User.prototype.role = 'front-end';
@@ -92,9 +101,12 @@ john.isAdmin = true;                // true
 alex.role;                          // 'front-end'
 alex.isAdmin;                       // false
 
-// call methods
+// call public, private methods
 john.getUserInfo();                 // 'My name is John, i'm 31 yeasr old.'
 john.toString();                    // 'User data: John 31'
+alex.getIsAdmin();                  // 'Alex has admin permission: false'
+alex.setIsAdmin();                  // true
+alex.getIsAdmin();                  // 'Alex has admin permission: true'
 
 // call static method
 User.currentUserId();               // 2
@@ -118,8 +130,8 @@ alex.constructor;                   // reference to the function constructor Use
 // create new function constructor
 function Frontend(name, age, developer) {
   // inheritance from User Constructor
-  // User.apply(this, arguments);
-  User.call(this, name, age);
+  // User.call(this, name, age);
+  User.apply(this, arguments);
 
   this.developer = developer;
 };
