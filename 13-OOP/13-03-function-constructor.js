@@ -30,12 +30,12 @@ function User(name, age) {
 
   initialization function prototype object
   after declaration all functions have reference to the 'protorype' property
-  F.prototype: { }
+  F.prototype: { constructor: F };
 */
 
 /*
   by default 'prototype' has 'constructor' property with reference to this function
-  F.prototype: { constructor: F }
+  F.prototype: { constructor: F };
 
   F.   <=======================
     prototype. (__proto__) <==|========
@@ -51,16 +51,12 @@ function User(name, age) {
   // reassignment F.prototype object with constructor property
   F.prototype = {
     constructor: F,
-    method1: function(x) {
-      return x;
-    },
-  }
+    method1: function() {},
+  };
 
   or add new prototype method to the existing F.prototype object without clearing constructor property
 
-  F.prototype.method1 = function(x) {
-    return x;
-  }
+  F.prototype.method1 = function() {};
 */
 
 // create function constructor method using prototype
