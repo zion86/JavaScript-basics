@@ -31,7 +31,13 @@ function User(name, age) {
   //   console.log(`My name is ${this.name}, i'm ${this.age} yeasr old.`);
   // };
 
-  /* return this; // (implicitly) */
+  /*
+    return this; // (implicitly)
+    or
+    return {
+      anotherProp: 'another value',
+    }
+  */
 }
 
 /*
