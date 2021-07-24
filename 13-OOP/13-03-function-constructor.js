@@ -15,8 +15,9 @@ function User(name, age) {
     return _isAdmin = !_isAdmin;
   };
 
-  this.getIsAdmin = function () {
-    return `${this.name} has admin permission: ${_isAdmin}`;
+  // function constructor public method
+  this.updatePermission = function () {
+    this._changeAdminPerission();
   };
 
   /* this.property = function argument */
