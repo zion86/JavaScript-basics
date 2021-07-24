@@ -7,16 +7,16 @@ function User(name, age) {
   // function constructor initialization
   /* this = {}; // (implicitly) */
 
-  // function constructor private property for all inheritances
+  // function constructor private property
   let _isAdmin = false;
 
-  // function constructor private methods
-  this.getIsAdmin = function () {
-    return `${this.name} has admin permission: ${_isAdmin}`;
+  // function constructor private method
+  this._changeAdminPerission = function () {
+    return _isAdmin = !_isAdmin;
   };
 
-  this.setIsAdmin = function () {
-    return _isAdmin = !_isAdmin;
+  this.getIsAdmin = function () {
+    return `${this.name} has admin permission: ${_isAdmin}`;
   };
 
   /* this.property = function argument */
