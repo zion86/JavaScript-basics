@@ -11,16 +11,19 @@ function User(name, age) {
   let _isAdmin = false;
 
   // function constructor private method
-  this._changeAdminPerission = function () {
+  const _changeAdminPerission = function () {
     return _isAdmin = !_isAdmin;
   };
 
-  // function constructor public method
+  // function constructor public method to call private method and change private property
   this.updatePermission = function () {
-    this._changeAdminPerission();
+    // call private method to change private data
+    _changeAdminPerission();
+    console.log(`User changed admin permission to ${_isAdmin}`);
   };
 
   /* this.property = function argument */
+  // function constructor public properties
   this.name = name;
   this.age = age;
 
@@ -102,18 +105,19 @@ User.currentUserId = function () {
 const john = new User('John', 31);  // User { name: "John", age: 31, isAdmin: false }
 const alex = new User('Alex', 33);  // User { name: "Alex", age: 33, isAdmin: false }
 
+// read private property and method
+/* private propery and method visible only inside function F() {} */
+john._isAdmin;                      // undefined
+john.updatePermission();            // 'User changed admin permission to true' indise User() {}
+john.updatePermission();            // 'User changed admin permission to false' indise User() {}
+
 // change or read property in Object inheritance, NOT in the prototype
 john.role = 'back-end';             // 'back-end'
-john.isAdmin = true;                // true
 alex.role;                          // 'front-end'
-alex.isAdmin;                       // false
 
-// call public, private methods
+// call public method
 john.getUserInfo();                 // 'My name is John, i'm 31 yeasr old.'
 john.toString();                    // 'User data: John 31'
-alex.getIsAdmin();                  // 'Alex has admin permission: false'
-alex.setIsAdmin();                  // true
-alex.getIsAdmin();                  // 'Alex has admin permission: true'
 
 // call static method
 User.currentUserId();               // 2
