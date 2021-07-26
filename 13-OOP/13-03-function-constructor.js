@@ -15,7 +15,7 @@ function User(name, age) {
     return _isAdmin = !_isAdmin;
   };
 
-  // function constructor public method to call private method and change private property
+  // function constructor privileged method to call private method and change private property
   this.updatePermission = function () {
     // call private method to change private data
     _changeAdminPerission();
@@ -83,7 +83,7 @@ User.prototype.getUserInfo = function () {
   return `My name is ${this.name}, i'm ${this.age} yeasr old.`;
 };
 
-// reassing method .toString() from Object.prototype
+// overriding method .toString() from Object.prototype.toString()
 User.prototype.toString = function () {
   return `User data: ${this.name} ${this.age}`;
 };
