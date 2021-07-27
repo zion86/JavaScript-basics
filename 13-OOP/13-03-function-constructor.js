@@ -102,8 +102,8 @@ User.currentUserId = function () {
 
 // operator 'new' create empty Object {}
 // create new Object inheritance from function constructor
-const john = new User('John', 31);  // User { name: "John", age: 31, isAdmin: false }
-const alex = new User('Alex', 33);  // User { name: "Alex", age: 33, isAdmin: false }
+const john = new User('John', 31);  // User { name: "John", age: 31, updatePermission: ƒ }
+const alex = new User('Alex', 33);  // User { name: "Alex", age: 33, updatePermission: ƒ }
 
 // read private property and method
 /* private propery and method visible only inside function F() {} */

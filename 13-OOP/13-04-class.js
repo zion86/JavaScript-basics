@@ -17,6 +17,35 @@
       invoke after creating new Object using notation new User()
       new User('Alex', 32);
     */
+
+    /*
+      experimental
+
+      // private properties
+      #isAdmin;     using only inside class
+
+      // public properties (fields)
+      name = 'Unknown';
+      age = 0;
+
+      ===
+
+      constructor(name = 'Unknown', age = 0, isAdmin) {
+        // private properties
+        this.#isAdmin = isAdmin;
+
+        // public properties
+        this.name = name;
+        this.age = age;
+      }
+    */
+
+    // static property
+    static id = 0;
+
+    // static method
+    static countId() { }
+
     constructor(name, age) {
       /* this = {}; // (implicitly) */
 
@@ -30,12 +59,14 @@
       /* return this; // (implicitly) */
     }
 
-    // class getter is a syntax to bind class property with class mwthod
+    // class getter is a syntax to bind class property with class method
     get isAdmin() {
       console.log(`reading isAdmin permission: ${this._isAdmin}`);
       return this._isAdmin;
     }
 
+    // class setter is a syntax to bind class property with class method
+    // called when assigned value to the property
     set isAdmin(value) {
       console.log(`changing isAdmin permission`);
       return this._isAdmin = value;
@@ -67,7 +98,6 @@
     john.isAdmin; NOT john.isAdmin();
     calling setter assignment class property
     john.isAdmin = true;
-
   */
   // john.isAdmin()                   // TypeError: john.isAdmin is not a function
   john.isAdmin;                       // 'reading isAdmin class closed property: false'
