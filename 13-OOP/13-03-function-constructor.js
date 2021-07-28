@@ -8,21 +8,21 @@ function User(name, age) {
   /* this = {}; // (implicitly) */
 
   // function constructor private property
-  let _isAdmin = false;
+  let _isSuperUser = false;
 
   // function constructor private method
   const _changeAdminPerission = function () {
-    return _isAdmin = !_isAdmin;
+    return _isSuperUser = !_isSuperUser;
   };
 
   // function constructor privileged method to call private method and change private property
   this.updatePermission = function () {
     // call private method to change private data
     _changeAdminPerission();
-    console.log(`User changed admin permission to ${_isAdmin}`);
+    console.log(`User changed admin permission to ${_isSuperUser}`);
   };
 
-  /* this.property = function argument */
+  /* this.property = function constructor argument */
   // function constructor public properties
   this.name = name;
   this.age = age;

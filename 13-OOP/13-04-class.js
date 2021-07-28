@@ -21,8 +21,21 @@
     /*
       experimental
 
-      // private properties
-      #isAdmin;     using only inside class
+      // static property (field)
+      static id = 0;
+
+      // static method (field)
+      static countId() {
+        console.log(`total id's: ${User.id}`);
+      }
+
+      // private property (field)
+      #isSuperUser = false;     using only inside class
+
+      // private method
+      #showSuperUser() {
+        console.log(this.#isSuperUser);
+      }
 
       // public properties (fields)
       name = 'Unknown';
@@ -30,9 +43,12 @@
 
       ===
 
-      constructor(name = 'Unknown', age = 0, isAdmin) {
-        // private properties
-        this.#isAdmin = isAdmin;
+      constructor(name = 'Unknown', age = 0, isSuperUser = false) {
+        // static property
+        this.id = ++User.id;
+
+        // private property
+        this.#isSuperUser = isSuperUser;
 
         // public properties
         this.name = name;
@@ -44,15 +60,24 @@
     static id = 0;
 
     // static method
-    static countId() { }
+    static countId() {
+      console.log(`total numbers of users: ${User.id}`);
+    }
 
-    constructor(name, age) {
+    // private property
+    #isSuperUser = false;
+
+    constructor(name, age, isSuperUser = false) {
       /* this = {}; // (implicitly) */
 
-      // class closed property
-      this._isAdmin = false;
+      // closed property
+      // this._isSuperUser = false;
+      this.#isSuperUser = isSuperUser;
 
-      /* this.property = function argument */
+      // static property
+      this.id = ++User.id;
+
+      /* this.property = function constructor argument */
       this.name = name;
       this.age = age;
 
@@ -60,36 +85,63 @@
     }
 
     // class getter is a syntax to bind class property with class method
-    get isAdmin() {
-      console.log(`reading isAdmin permission: ${this._isAdmin}`);
-      return this._isAdmin;
+    get isSuperUser() {
+      console.log(`reading superUser permission: ${this.#isSuperUser}`);
+      return this.#isSuperUser;
     }
 
     // class setter is a syntax to bind class property with class method
     // called when assigned value to the property
-    set isAdmin(value) {
-      console.log(`changing isAdmin permission`);
-      return this._isAdmin = value;
+    set isSuperUser(value) {
+      console.log(`changing superUser permission`);
+      return this.#isSuperUser = value;
     }
 
-    // create class method
+    // create public method
     /* User.prototype.getUserInfo */
     getUserInfo() {
       return `My name is ${this.name}, i'm ${this.age} yeasr old.`;
     }
 
-    // reassing method .toString() from Object.prototype
+    // overriding public method .toString() from Object.prototype
     /* User.prototype.toString */
     toString() {
       return `User data: ${this.name} ${this.age}`;
     }
+
+    // create private method
+    #showFullInfo() {
+      console.log(`id: ${this.id}, name:${this.name}, age: ${this.age}, superUser: ${this.#isSuperUser}`);
+    }
+
+    show() {
+      this.#showFullInfo();
+    }
   }
+
+  /*
+    // current class static property and method notation (outside of the class constructor)
+  
+    // static property
+    User.id = 0;
+  
+    // static method
+    User.countId = function() {
+      console.log(`total numbers of users: ${User.id}`);
+    }
+  */
 
 
   // operator 'new' create empty Object {}
   // create new Object inheritance from function constructor
-  const john = new User('John', 31);  // User { name: "John", age: 31 }
-  const alex = new User('Alex', 33);  // User { name: "Alex", age: 33 }
+  const john = new User('John', 31);  // User { id: 1, name: "John", age: 31, #isSuperUser: false }
+  const alex = new User('Alex', 33);  // User { id: 2, name: "Alex", age: 33, #isSuperUser: false }
+
+
+  // call static method
+  User.countId();                     // 'total numbers of users: 2'
+  // read static property
+  User.id;                            // 2
 
 
   // call class getter, setter
@@ -99,15 +151,18 @@
     calling setter assignment class property
     john.isAdmin = true;
   */
-  // john.isAdmin()                   // TypeError: john.isAdmin is not a function
-  john.isAdmin;                       // 'reading isAdmin class closed property: false'
-  john.isAdmin = true;                // 'changing isAdmin permission: false'
-  john.isAdmin;                       // 'reading isAdmin permission: true'
+  // john.isSuperUser();                  // TypeError: john.isSuperUser is not a function
+  john.isSuperUser;                       // 'reading superUser permission: false'
+  john.isSuperUser = true;                // 'changing superUser permission'
+  john.isSuperUser;                       // 'reading superUser permission: true'
 
 
-  // call public, private methods
+  // call public methods
   john.getUserInfo();                 // 'My name is John, i'm 31 yeasr old.'
   john.toString();                    // 'User data: John 31'
+
+  // call private method using function show()
+  alex.show();               // 'id: 2, name:Alex, age: 33,superUser: false'
 }
 
 
@@ -133,69 +188,29 @@
 
 
 /*
+  // extend superClass with new subClass
+  class ColoredRectangleWithText extends User {
 
-// extend superClass with new subClass
-class ColoredRectangleWithText extends User {
+    // create constructor
+    constructor(height, width, text, bgColor) {   // extend arguments
+      super(height, width);                       // inheritance arguments from superClass
 
-  // create constructor
-  constructor(height, width, text, bgColor) {   // extend arguments
-    super(height, width);                       // inheritance arguments from superClass
-
-    this.text = text;
-    this.bgColor = bgColor;
-  }
-
-  // create class method
-  showMyProps() {
-    console.log(`text: ${this.text}, bgColor: ${this.bgColor}`);
-  }
-};
-
-// create new Object copy from supreClass
-const square = new User(10, 10);
-square.calcArea();
-
-// create new Object copy from extended subClass
-const longRegtangle = new ColoredRectangleWithText(10, 100, 'Long Regtangle', 'green');
-longRegtangle.showMyProps();          // text: Long Regtangle, bgColor: green
-longRegtangle.calcArea();             // 1000
-
-
-
-
-
-{ // experimental
-  class Counter {
-    count = 0;
-
-    increment = () => {
-      this.count += Counter.incrementStep;
+      this.text = text;
+      this.bgColor = bgColor;
     }
 
-    static incrementStep = 2;
-
-    static incrementAll = function (arr) {
-      arr.forEach((c) => c.increment());
+    // create class method
+    showMyProps() {
+      console.log(`text: ${this.text}, bgColor: ${this.bgColor}`);
     }
-  }
+  };
 
-  // work example
-  class Counter {
-    constructor() {
-      this.count = 0;
-      this.increment = () => {
-        this.count += Counter.incrementStep;
-      }
-    }
-  }
+  // create new Object copy from supreClass
+  const square = new User(10, 10);
+  square.calcArea();
 
-  // create static property
-  Counter.incrementStep = 2;
-
-  // create static method
-  Counter.incrementAll = function (arr) {
-    arr.forEach((c) => c.increment());
-  }
-}
-
+  // create new Object copy from extended subClass
+  const longRegtangle = new ColoredRectangleWithText(10, 100, 'Long Regtangle', 'green');
+  longRegtangle.showMyProps();          // text: Long Regtangle, bgColor: green
+  longRegtangle.calcArea();             // 1000
 */
