@@ -21,29 +21,29 @@ class User {
   /*
     experimental
 
-    // prorotype-like property
-    // User.prototype.active = 'online';
-    active = 'online';
+    // prorotype-like property 
+    // User.prototype.active = 'online';  ES5
+    active = 'online';                    ES6
 
-    // static property (field)
-    static id = 0;
+    // static property
+    // User.id = 0;                       ES5
+    static id = 0;                        ES6
 
-    // static method (field)
-    static countId() {
+    // static method
+    // User.countId = function() {        ES5
+    //   console.log(`total id's: ${User.id}`);
+    // }
+    static countId() {                    ES6
       console.log(`total id's: ${User.id}`);
     }
 
-    // private property (field)
+    // private property                   ES6
     #isSuperUser = false;     using only inside class
 
     // private method
     #showSuperUser() {
       console.log(this.#isSuperUser);
     }
-
-    // public properties (fields)
-    name = 'Unknown';
-    age = 0;
 
     ===
 
@@ -60,18 +60,22 @@ class User {
     }
   */
 
-  // User.prototype.active = 'online';
+  /* User.prototype.active = 'online'; */
+  /* exist in all istances of the parent class */
   // active = 'online';
 
   // static property
+  /* exist only inside parent class */
   static id = 0;
 
   // static method
+  /* exist only inside parent class */
   static countId() {
     console.log(`total numbers of users: ${User.id}`);
   }
 
   // private property
+  /* exist only inside parent class */
   #isSuperUser = false;
 
   constructor(name, age, isSuperUser = false) {
@@ -175,7 +179,6 @@ alex.showInfo();               // 'id: 2, name:Alex, age: 33,superUser: false'
 
 // class Frontend inherits all properties and methods from User class
 class Frontend extends User {
-
   /*
     // by default extended class create a constructor
     constructor(...args) {
@@ -185,7 +188,7 @@ class Frontend extends User {
 
   // Frontend function constructor initialization
   constructor(name, age, isSuperUser) {
-    // call parent class constructor before using 'this' keyword!!!
+    // call parent class constructor before using 'this' keyword using super(...args)!!!
     super(name, age, isSuperUser);
 
     this.developer = 'frontend';
