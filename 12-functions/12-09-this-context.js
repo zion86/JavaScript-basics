@@ -1,12 +1,15 @@
 'use strict';
 
-// context environment 'this'
+// 'this' context environment
 
 
-// GLOBAL function has 'this' window.showThis
+// v1 global window context
+/* GLOBAL function has Global Object Window 'this' (window.showThis) */
+/* in strict mode GLOBAL function has undefined this */
+
 function showThis(a = 2, b = 2) {
-  // in default mode this === window
-  // in strict mode this === undefined
+  // in default mode 'this' === window
+  // in 'strict mode' 'this' === undefined
   console.log(this);            // undefined
 
   // nested function
@@ -24,8 +27,10 @@ function showThis(a = 2, b = 2) {
 showThis();
 
 
+// v2 Object context
+// 'this' returns this Object context
 
-{ // this inside Object
+{
   const obj = {
     a: 10,
     b: 20,
@@ -39,7 +44,7 @@ showThis();
       // function hide() {
       //   // inside nested function in default mode this === window
       //   // inside nested function in strict mode this === undefined
-      //   console.log(this);      // undefined
+      //   console.log(this);         // undefined
       // };
 
       // hide();
@@ -47,10 +52,9 @@ showThis();
   };
 
   obj.sum();                    // 'this' has reference on self Object from left side obj.method()
-}
 
 
-{ // manual bind this using reference
+  // manual bind this using reference
   const user = {
     name: 'Alex'
   };
@@ -69,7 +73,37 @@ showThis();
 }
 
 
-{ // function fabric and 'this'
+// v3 'this' in the function constructor, class, function fabric
+
+{ // function constructor
+  function User(name, id) {
+    this.name = name;
+    this.id = id;
+    this.human = true;
+    this.greating = function () {
+      console.log(this);
+      console.log(`Hello ${this.name}`);
+    };
+  };
+
+  // 'this' reference to the function constructor of class
+  const alex = new User('Alex', 33);
+  alex.greating();                          // User { name: 'Alex', id: 33, human: true, greating: [Function(anonymous)] }, 'Hello Alex'
+
+
+  // es6 class
+  class User {
+    constructor(name, age) {
+      this.name = name;
+      this.age = age;
+      console.log(this);
+    }
+  }
+
+  const alex = new User('Alex', 32); // User { name: 'Alex', age: 32 }
+
+
+  // function fabric
   function createUser(login, email) {
     return {
       // ES5 syntax properties
@@ -100,25 +134,9 @@ showThis();
 }
 
 
-{ // 'this' inside function Constructors and Class === new inheritance Object
-  // function Constructor
-  function User(name, id) {
-    this.name = name;
-    this.id = id;
-    this.human = true;
-    this.greating = function () {
-      console.log(this);
-      console.log(`Hello ${this.name}`);
-    };
-  };
+// v4 manual bind 'this' using function methods func.call() func.apply() func.bind()
 
-  // 'this' reference to function Constructor of Class
-  const alex = new User('Alex', 33);
-  alex.greating();
-}
-
-
-{ // manual bind this .call() .apply() .bind()
+{
   const user = {
     name: 'Alex'
   };
@@ -136,7 +154,7 @@ showThis();
   // .bind function to the Object
   const sayFullNameFn = sayName.bind(user, 'Burton');
   // call binded function
-  sayFullNameFn();
+  sayFullNameFn();                      // { name: 'Alex' }, 'Alex Burton'
 
   // call function with (this context)
   sayName.call(user, 'Smith');
@@ -157,6 +175,8 @@ showThis();
 }
 
 
+// v5 'this' and arrow function
+
 { // in arrow function not exist this context
   const obj = {
     num: 5,
@@ -175,7 +195,9 @@ showThis();
 }
 
 
-{ // this in addEventListener
+// v6 'this' in htmlElem.addEventListener('event', callback);
+
+{
   const button = document.createElement('button');
   button.textContent = 'button';
   document.body.append(button);
