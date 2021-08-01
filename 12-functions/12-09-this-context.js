@@ -35,7 +35,7 @@ showThis();
     a: 10,
     b: 20,
 
-    // Object method
+    // object method
     sum: function () {
       // inside Object method 'this' reference to this Object
       console.log(this);              // { a: 10, b: 20, sum: [Function: sum] }
@@ -54,21 +54,21 @@ showThis();
   obj.sum();                    // 'this' has reference on self Object from left side obj.method()
 
 
-  // manual bind this using reference
+  // manual bind 'this' using object property reference
   const user = {
     name: 'Alex'
   };
 
-  // add arguments in function
+  // add arguments to the function
   function sayName(surname) {
     console.log(this);
     console.log(this.name + ' ' + surname);
   };
 
-  // dynamicly bind Object with function using Object reference
+  // dynamicly bind object with function using object reference
   user.sayName = sayName;
 
-  // call Object with binded method
+  // call object using binded method
   user.sayName('Smit');
 }
 
