@@ -15,11 +15,11 @@
   }, 3000, 'Hello World!');
 
 
-  // callback inside setTimeout()
+  // callback function inside setTimeout()
   const logger = () => console.log('Hello user!');
+  // save setTimeout ID to variable
   const timerFnId = setTimeout(logger, 4000);
-
-  // clear setTimeout() function
+  // clear setTimeout() function using setTimeout ID
   clearInterval(timerFnId);
 }
 
@@ -35,12 +35,14 @@ let i = 0;
   const logger = () => {
     if (i === 5) {
       console.log(`Stop setInterval function ${i} === 5`);
+      // call setInterval ID to clear setInterval function
       clearInterval(intervalId);
     }
     console.log(`counter ${i}`);
     i++;
   };
 
+  // save setInterval ID
   intervalId = setInterval(logger, 500);
 }
 
