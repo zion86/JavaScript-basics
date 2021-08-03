@@ -1,11 +1,14 @@
 // var keyword
-// var is always global variable, only inside function var is local variable.
+// var is always global variable, only inside function var is local variable
 
 
 // global variable
 var userName = 'Alex';                      // 'Alex'
 var userName = 'John';                      // 'John'
 userName = 'Katty';                         // 'Katty'
+
+// 'window' is global object, var exist inside global object 'window' as object property
+window.userName;                            // 'Katty'
 
 
 // only inside functions var is local variable

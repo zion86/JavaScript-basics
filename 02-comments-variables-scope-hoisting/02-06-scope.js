@@ -1,11 +1,18 @@
 // GLOBAL variables: var, function fName() {} (have hoisting)
 // LOCAL variables: let, const, const localFn = () => {};
+// 'globalThis' is standard keyword for browser and node.js environments
 
 
-// GLOBAL SCOPE: var, let, const
+// GLOBAL SCOPE: var, function declaration (inside window object)
+// LOCAL SCOPE: let, const (inside script file)
 var globalVar = 'global var';
+window.globalVar;                               // 'global var'
+
 let globalLet = 'global let';
+window.globalLet;                               // undefined
+
 const globalConst = 'global const';
+window.globalConst;                             // undefined
 
 
 { // LOCAL SCOPE: global variables is visibles in local scope
@@ -28,7 +35,7 @@ const globalConst = 'global const';
   // var global variable inside local scope
   var userName = 'Alex';
 
-  // function declaration global variable inside local scope
+  // function declaration is global variable inside local scope
   function showDate() {
     return `The date is: '01.01.1990'`;
   }
@@ -43,9 +50,9 @@ const globalConst = 'global const';
 
 // date;                                      // ReferenceError: date is not defined
 // getLocalFn();                              // ReferenceError: localFn is not defined
-
-// showDate();                                // The date is: '01.01.1990'
 // userName;                                  // 'Alex'
+// window.showDate();                         // 'The date is: '01.01.1990''
+// showDate();                                // 'The date is: '01.01.1990''
 
 
 if (true) {
