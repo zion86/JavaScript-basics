@@ -2,11 +2,9 @@
 
 // 'this' context environment
 
-
 // v1 global window context
 /* GLOBAL function has Global Object Window 'this' (window.showThis) */
 /* in strict mode GLOBAL function has undefined this */
-
 function showThis(a = 2, b = 2) {
   // in default mode 'this' === window
   // in 'strict mode' 'this' === undefined
@@ -29,7 +27,6 @@ showThis();
 
 // v2 Object context
 // 'this' returns this Object context
-
 {
   const obj = {
     a: 10,
@@ -74,7 +71,6 @@ showThis();
 
 
 // v3 'this' in the function constructor, class, function fabric
-
 { // function constructor
   function User(name, id) {
     this.name = name;
@@ -135,7 +131,6 @@ showThis();
 
 
 // v4 manual bind 'this' using function methods func.call() func.apply() func.bind()
-
 {
   const user = {
     name: 'Alex'
@@ -176,7 +171,6 @@ showThis();
 
 
 // v5 'this' and arrow function
-
 { // in arrow function not exist this context
   const obj = {
     num: 5,
@@ -196,7 +190,6 @@ showThis();
 
 
 // v6 'this' in htmlElem.addEventListener('event', callback);
-
 {
   const button = document.createElement('button');
   button.textContent = 'button';
