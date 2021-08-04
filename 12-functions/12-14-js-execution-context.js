@@ -1,13 +1,15 @@
 /*
   execution context
-  execution stack
+  execution stack or call stack
 */
 
 
 /*
-  context types:
-  1. global execution context:        creating once during creating script
-  2. functional execution context:    creating each time when function is calling and deleting after end of the function
+  execution context types:
+  1. global execution context: creating once during creating script
+      - create global object window
+      - create global variable this
+  2. functional execution context: creating each time when function is calling and deleting after the end of function
   3. eval function execution context: code executed from eval
 */
 
