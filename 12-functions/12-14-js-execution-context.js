@@ -1,22 +1,22 @@
 /*
   execution context
-  execution stack or call stack
+  execution stack or call stack (LIFO)
 */
 
 
 /*
   execution context types:
-  1. global execution context: creating once during creating script
-      - create global object window
-      - create global variable this
-  2. functional execution context: creating each time when function is calling and deleting after the end of function
-  3. eval function execution context: code executed from eval
+  1. Global Execution Context: creating once during creating script
+      - creation window: global object
+      - creation this: window
+  2. Functional Execution Context: creating each time when function is calling and deleting after the end of function
+  3. Eval Function Execution Context: code executed from eval
 */
 
 
 /*
   'execution stack' start
-    <script>                            // => create 'global execution context' start
+    <script>                            // => creation 'global execution context' start
 
       function f1() {
         console.log('message');
@@ -30,6 +30,6 @@
 
                                         // first delete f1() (2)
                                         // last delete f2() (1)
-    </script>                           // 'global execution context' end
+    </script>                           // creation 'global execution context' end
   'execution stack' end
 */
