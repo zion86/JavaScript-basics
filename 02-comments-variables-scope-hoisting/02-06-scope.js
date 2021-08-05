@@ -1,10 +1,13 @@
 // GLOBAL variables: var, function fName() {} (have hoisting)
 // LOCAL variables: let, const, const localFn = () => {};
+
+// 'window' is global object for browser
+// 'global' is global object for node.js
 // 'globalThis' is standard keyword for browser and node.js environments
 
 
-// GLOBAL SCOPE: var, function declaration (inside window object)
-// LOCAL SCOPE: let, const (inside script file)
+// GLOBAL SCOPE: var, function declaration (visibles globally inside window object)
+// LOCAL SCOPE: let, const (visibles locally only inside script file)
 var globalVar = 'global var';
 window.globalVar;                               // 'global var'
 
