@@ -17,6 +17,9 @@
 
 
 /*
+  1. JavaScript engine reads the code
+  2. JavaScript engine puts a couple of references in Global Memory (Heap)
+
   'execution stack' start
     <script>                            // => creation 'global execution context' start
 
