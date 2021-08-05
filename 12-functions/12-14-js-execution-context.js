@@ -1,4 +1,24 @@
 /*
+  1. JavaScript engine reads the code
+  2. JavaScript engine puts a couple of references in Global Memory (Heap)
+      - Global memory is the scope where the JavaScript engine stores variables and function declarations.
+  3. 
+
+  <script>                1-start
+                          2 -----------------
+    var num = 2;           | GLOBAL MEMORY: |
+                           | num = 2        |
+    function pow(num) {    | pow = function |
+      return num * num;    ------------------
+    }
+
+    pow(num);             3
+
+  </script>               1-end
+*/
+
+
+/*
   execution context has two phases:
     - creation phase
     - execution phase
@@ -17,9 +37,6 @@
 
 
 /*
-  1. JavaScript engine reads the code
-  2. JavaScript engine puts a couple of references in Global Memory (Heap)
-
   'execution stack' start
     <script>                            // => creation 'global execution context' start
 
