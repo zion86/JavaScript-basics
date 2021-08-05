@@ -1,5 +1,7 @@
 /*
-  execution context
+  execution context has two phases:
+    - creation phase
+    - execution phase
   execution stack or call stack (LIFO)
 */
 
@@ -9,7 +11,7 @@
   1. Global Execution Context: creating once during creating script
       - creation window: global object
       - creation this: window
-  2. Functional Execution Context: creating each time when function is calling and deleting after the end of function
+  2. Functional Execution Context: created each time when function was called and deleted after execution of this function
   3. Eval Function Execution Context: code executed from eval
 */
 
