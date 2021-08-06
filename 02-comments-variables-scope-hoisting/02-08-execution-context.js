@@ -23,13 +23,13 @@
 
   <script>                    1 start
 
-    function f1() {           2 ----------------  1 - GEC phase 1 creation -
-      console.log('message'); | GLOBAL MEMORY: |  | window: global object  |
-    }                         | f1 = function  |  | this: window           |
-                              | f2 = function  |  | f1: fn()               |
-    function f2() {           ------------------  | f2: fn()               |
-      f1();                                       | name: undefined        |
-    }                                             --------------------------
+    function f1() {           2 ----------------  1.1 -GEC phase 1 creation-  1.2 -GEC phase 2 execution-
+      console.log('message'); | GLOBAL MEMORY: |  | window: global object  |  | window: global object   |
+    }                         | f1 = function  |  | this: window           |  | this: window            |
+                              | f2 = function  |  | f1: fn()               |  | f1: fn()                |
+    function f2() {           ------------------  | f2: fn()               |  | f2: fn()                |
+      f1();                                       | name: undefined        |  | name: 'Alex'            |
+    }                                             --------------------------  ---------------------------
 
     var name = 'Alex';
 
