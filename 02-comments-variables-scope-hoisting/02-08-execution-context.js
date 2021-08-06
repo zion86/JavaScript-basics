@@ -8,6 +8,13 @@
 */
 
 /*
+  execution context has two phases:
+    - creation phase
+    - execution phase
+  execution stack or call stack (LIFO)
+*/
+
+/*
   1. JavaScript engine reads the code and creates Global Execution Context (GEC)
   2. JavaScript engine puts a couple of references in Global Memory (Heap)
       - Global memory is the scope where the JavaScript engine stores variables and function declarations.
@@ -16,13 +23,15 @@
 
   <script>                    1 start
 
-    function f1() {           2 ----------------
-      console.log('message'); | GLOBAL MEMORY: |
-    }                         | f1 = function  |
-                              | f2 = function  |
-    function f2() {           ------------------
-      f1();
-    }
+    function f1() {           2 ----------------  1 - GEC phase 1 creation -
+      console.log('message'); | GLOBAL MEMORY: |  | window: global object  |
+    }                         | f1 = function  |  | this: window           |
+                              | f2 = function  |  | f1: fn()               |
+    function f2() {           ------------------  | f2: fn()               |
+      f1();                                       | name: undefined        |
+    }                                             --------------------------
+
+    var name = 'Alex';
 
     f2();                     3.1 ------------  3.2 ------------  3.3 ------------  3.4 ------------  3.5 ------------
                               |              |  |              |  | f1() FEC     |  |              |  |              |
@@ -31,12 +40,4 @@
                               -- call stack --  -- call stack --  -- call stack --  -- call stack --  -- call stack --
 
   </script>                 1 end
-*/
-
-
-/*
-  execution context has two phases:
-    - creation phase
-    - execution phase
-  execution stack or call stack (LIFO)
 */
