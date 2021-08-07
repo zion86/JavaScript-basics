@@ -11,7 +11,7 @@ document.forms[0];                        // return first form in the document <
 document.forms.pizza;                     // return form with name="pizza" <form name="pizza">
 
 // FORMS elements
-document.forms[0].elements               // return HTMLFormControlsCollection(2) [input, input, one: input, two: input]
+document.forms[0].elements                // return HTMLFormControlsCollection(2) [input, input, one: input, two: input]
 document.forms.pizza.elements.one;        // return <input name="one" value="1">
 document.forms.pizza.elements.one.value;  // return input value <input name="one" value="1">
 
