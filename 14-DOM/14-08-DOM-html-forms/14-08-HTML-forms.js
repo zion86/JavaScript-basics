@@ -5,8 +5,8 @@
 
 /*
   <form name="pizza">
-  <input name="one" value="1">
-  <input name="two" value="2">
+    <input name="one" value="1">
+    <input name="two" value="2">
   </form >
 */
 
@@ -78,7 +78,7 @@ loginForm.login.form === loginForm;       // true
 // SELECT FORM ELEMENT
 
 /*
-  // <select id="selectId" multiple>
+//<select id="selectId" multiple>
   <select id="selectId">
     <option value="apple">Apple</option>
     <option value="pear">Pear</option>
