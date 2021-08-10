@@ -5,8 +5,8 @@
 
 /*
   <form name="pizza">
-  <input name="one" value="1">
-  <input name="two" value="2">
+    <input name="one" value="1">
+    <input name="two" value="2">
   </form >
 */
 
