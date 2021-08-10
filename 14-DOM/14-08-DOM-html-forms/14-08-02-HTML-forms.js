@@ -5,8 +5,8 @@
 
 /*
   <form name="pizza">
-    <input name="one" value="1">
-    <input name="two" value="2">
+  <input name="one" value="1">
+  <input name="two" value="2">
   </form >
 */
 
@@ -23,12 +23,13 @@ document.forms.pizza.elements.one.value;  // returns input value <input name="on
 /*
   <form name="radioBtns">
     <input type="radio" name="age" value="10">
-    <input type="radio" name="age" value="20">
+    <input type="radio" name="age" value="20" checked>
   </form >
 */
 
 document.forms[1].elements.age;           // returns RadioNodeList(2) [input, input, value: ""] by name="age"
 document.forms[1].elements.age[0];        // returns <input type="radio" name="age" value="10">
+document.forms.radioBtns.age.value;       // returns checked radio button value: '20'
 
 
 // <fieldset name="userFields"> as SUBFORM
@@ -64,15 +65,19 @@ formId.userFields.elements.login;         // return <input name="login" type="te
 loginForm.login.form === loginForm;       // true
 
 
-// VALUES IN INPUTS
+// INPUTS VALUES
 /* <input type="text" value="New value"> */
 // input.value = "New value";
 
 /* <textarea cols="30" rows="10"></textarea> */
 // textarea.value = "New text";
+// textarea.innerHTML;                    // contains value from html layout
 
-/* <input type="checkbox" checked value=""> */
+/* <input type="checkbox" checked> */
 // input.checked = true;                  // for a checkbox or radio button
+
+/* <input type="radio" name="age" value="20" checked> */
+// document.forms.form.age.value;
 
 
 // SELECT FORM ELEMENT
@@ -86,10 +91,17 @@ loginForm.login.form === loginForm;       // true
   </select>
 */
 
-// all three lines do the same thing
+// get selected value or index
+selectId.selectedIndex;                   // 2
+selectId.value;                           // 'banana'
+
+// change select value or index (all three lines do the same thing)
 selectId.options[2].selected = true;
 selectId.selectedIndex = 2;
 selectId.value = 'banana';
 
 // new Option for <select>
 // const option = new Option(text, value, defaultSelected, selected);
+
+
+// document.forms[0].checkValidity();     // returns true of false

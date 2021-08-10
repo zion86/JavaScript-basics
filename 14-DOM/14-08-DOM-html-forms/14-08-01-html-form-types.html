@@ -33,8 +33,22 @@
   <form>
     checkbox: <input type="checkbox" checked> <br>
 
-    <input type="radio" name="age" value="10" checked>
-    <input type="radio" name="age" value="20">
+    <input type="radio" name="age" value="10">
+    <input type="radio" name="age" value="20" checked>
+  </form>
+
+
+  <!-- v1 binding label with input -->
+  <form>
+    <label for="userEmail">email:</label>
+    <input type="email" id="userEmail">
+  </form>
+
+  <!-- v2 binding label with input -->
+  <form>
+    <label>
+      user name: <input type="text">
+    </label>
   </form>
 
 </body>
