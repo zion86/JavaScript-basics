@@ -1,5 +1,7 @@
 'use strict';
 
+// JavaScript Object Notation
+
 { // JSON.stringify() > js data to json, JSON.parse() > json to js data
   const person = {
     name: 'Alex',
@@ -14,6 +16,7 @@
   const jsonToObj = JSON.parse(objToJson);
   console.log('jsonToObj: ', jsonToObj); // { name: 'Alex', tel: '+380951234567' }
 }
+
 
 { // deep clone Objects with JSON
   const person1 = {
