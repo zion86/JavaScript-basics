@@ -2,7 +2,9 @@
 
 // JavaScript Object Notation
 
-{ // JSON.stringify() > js data to json, JSON.parse() > json to js data
+{
+  // JSON.stringify()     js data to json
+  // JSON.parse()         json to js data
   const person = {
     name: 'Alex',
     tel: '+380951234567'
