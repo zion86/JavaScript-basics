@@ -20,9 +20,10 @@
   };
 
   getResourse('https://jsonplaceholder.typicode.com/todos/1')
-    .then(res => console.log('Success: ', res))
-    .catch(error => console.log('Error: ', error));
+    .then((res) => console.log('Success: ', res))
+    .catch((error) => console.log('Error: ', error));
 }
+
 
 {
   // use async before function

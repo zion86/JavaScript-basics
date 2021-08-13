@@ -2,12 +2,13 @@
 
 { // es6 fetch()
 
-  // fetch is async command !!!
+  // fetch is async!!!
   // 'GET' fetch request from server
   fetch('https://jsonplaceholder.typicode.com/todos/1')
-    .then(response => response.json())
-    .then(json => console.log(json));
+    .then((response) => response.json())
+    .then((json) => console.log(json));
 }
+
 
 { // 'POST' fetch request to server
   fetch('https://jsonplaceholder.typicode.com/posts/', {
@@ -17,8 +18,8 @@
     },
     body: JSON.stringify({ name: 'Alex' }),     // convert data to JSON and send to server
   })
-    .then(response => response.json())
-    .then(json => console.log('Success: ', json))
-    .catch(error => console.log('Error: ', error))
-    .finally(() => console.log('Do some things...'))
+    .then((response) => response.json())
+    .then((json) => console.log('Success: ', json))
+    .catch((error) => console.log('Error: ', error))
+    .finally(() => console.log('Do some things...'));
 }

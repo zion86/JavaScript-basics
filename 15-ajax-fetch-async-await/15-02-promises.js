@@ -9,7 +9,7 @@
   console.log('Request data...');
 
   // create new Promice (resolve = ok, reject = error)
-  const req = new Promise((resolve, reject) => {
+  const requestData = new Promise((resolve, reject) => {
     setTimeout(() => {
       console.log('Preparing data...');
 
@@ -25,8 +25,8 @@
   });
 
   // use resolve function from req Promise
-  req
-    .then(product => {
+  requestData
+    .then((product) => {
       return new Promise((resolve, reject) => {
         setTimeout(() => {
           product.status = 'order';
@@ -34,11 +34,11 @@
         }, 2000);
       });
     })
-    .then(data => {
+    .then((data) => {
       data.modify = true;
       return data;
     })
-    .then(data => {
+    .then((data) => {
       console.log('Output data: ', data)
     })
     .catch(() => {
@@ -53,7 +53,7 @@
 
 {
   const test = (time) => {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       setTimeout(() => resolve(), time);
     });
   };
@@ -66,7 +66,7 @@
     .all([test(3000), test(5000)])
     .then(() => console.log('Executed all Promises!'));
 
-  // Promise.race([function1(), function2()]) execute first faster Promises
+  // Promise.race([function1(), function2()]) execute first faster Promise
   Promise
     .race([test(300), test(10000)])
     .then(() => console.log('Executed first fasted Promise!'));
